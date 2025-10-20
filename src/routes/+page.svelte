@@ -33,6 +33,12 @@
 			<h2>Script Library</h2>
 			<p>Helpful scripts for common parenting situations</p>
 		</button>
+
+		<button class="tool-card" onclick={() => goto('/resources')}>
+			<div class="tool-icon">📖</div>
+			<h2>Resources</h2>
+			<p>Curated articles from parenting experts</p>
+		</button>
 	</div>
 </div>
 

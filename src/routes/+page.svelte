@@ -58,6 +58,18 @@
 			<p>Natural and logical consequences for behaviors</p>
 		</button>
 
+		<button class="tool-card" onclick={() => goto('/activity-generator')}>
+			<div class="tool-icon">🎲</div>
+			<h2>Activity Generator</h2>
+			<p>Quiet time and sensory break activity ideas</p>
+		</button>
+
+		<button class="tool-card" onclick={() => goto('/transition-timer')}>
+			<div class="tool-icon">🎵</div>
+			<h2>Transition Timer</h2>
+			<p>Musical timers for cleanup and transitions</p>
+		</button>
+
 		<button class="tool-card" onclick={() => goto('/script-library')}>
 			<div class="tool-icon">📚</div>
 			<h2>Script Library</h2>

@@ -40,6 +40,24 @@
 			<p>Create custom visual schedules and routines</p>
 		</button>
 
+		<button class="tool-card" onclick={() => goto('/chore-chart')}>
+			<div class="tool-icon">✅</div>
+			<h2>Chore Chart</h2>
+			<p>Age-appropriate chores with points and tracking</p>
+		</button>
+
+		<button class="tool-card" onclick={() => goto('/conflict-mediator')}>
+			<div class="tool-icon">🤝</div>
+			<h2>Conflict Mediator</h2>
+			<p>Guided resolution for sibling conflicts</p>
+		</button>
+
+		<button class="tool-card" onclick={() => goto('/consequences-guide')}>
+			<div class="tool-icon">🎯</div>
+			<h2>Consequences Guide</h2>
+			<p>Natural and logical consequences for behaviors</p>
+		</button>
+
 		<button class="tool-card" onclick={() => goto('/script-library')}>
 			<div class="tool-icon">📚</div>
 			<h2>Script Library</h2>

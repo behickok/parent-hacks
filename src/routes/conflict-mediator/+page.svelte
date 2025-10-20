@@ -635,6 +635,8 @@
 		font-style: italic;
 		margin-bottom: 1rem;
 		white-space: pre-line;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
 	}
 
 	.copy-button {

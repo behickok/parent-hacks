@@ -8,12 +8,12 @@
 
 	const materials = [
 		{ id: 'paper', name: 'Paper', icon: '📄' },
-		{ id: 'crayons', name: 'Crayons/Markers', icon: '🖍️' },
+		{ id: 'crayons', name: 'Crayons', icon: '🖍️' },
 		{ id: 'playdough', name: 'Play-Dough', icon: '🎨' },
 		{ id: 'blocks', name: 'Blocks/Legos', icon: '🧱' },
 		{ id: 'books', name: 'Books', icon: '📚' },
 		{ id: 'puzzles', name: 'Puzzles', icon: '🧩' },
-		{ id: 'blankets', name: 'Blankets/Pillows', icon: '🛏️' },
+		{ id: 'blankets', name: 'Blankets', icon: '🛏️' },
 		{ id: 'music', name: 'Music Player', icon: '🎵' },
 		{ id: 'toys', name: 'Small Toys', icon: '🧸' },
 		{ id: 'outdoor', name: 'Outdoor Space', icon: '🌳' }
@@ -696,6 +696,8 @@
 		color: #2c3e50;
 		margin-bottom: 1.5rem;
 		text-align: center;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
 	}
 
 	.activity-setup,
@@ -713,6 +715,8 @@
 	.activity-setup p {
 		color: #2c3e50;
 		line-height: 1.6;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
 	}
 
 	.material-tags {

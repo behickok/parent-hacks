@@ -724,6 +724,8 @@
 		margin: 0;
 		color: #2c3e50;
 		line-height: 1.6;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
 	}
 
 	.script-box {
@@ -746,6 +748,8 @@
 		color: #2c3e50;
 		font-style: italic;
 		margin-bottom: 1rem;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
 	}
 
 	.copy-button {

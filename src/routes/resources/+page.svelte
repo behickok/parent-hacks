@@ -414,6 +414,8 @@
 		color: #2c3e50;
 		margin: 0;
 		flex: 1;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
 	}
 
 	.source {

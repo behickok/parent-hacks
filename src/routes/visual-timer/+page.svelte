@@ -5,6 +5,7 @@
 	let totalMinutes = $state(5);
 	let remainingSeconds = $state(0);
 	let isRunning = $state(false);
+	let hasCompleted = $state(false);
 	let intervalId = null;
 	let inputMinutes = $state(5);
 
@@ -14,6 +15,7 @@
 				remainingSeconds--;
 				if (remainingSeconds <= 0) {
 					stopTimer();
+					hasCompleted = true;
 					playCompletionSound();
 				}
 			}, 1000);
@@ -31,6 +33,7 @@
 			if (remainingSeconds === 0) {
 				remainingSeconds = totalMinutes * 60;
 			}
+			hasCompleted = false;
 			isRunning = true;
 		}
 	}
@@ -42,17 +45,20 @@
 	function stopTimer() {
 		isRunning = false;
 		remainingSeconds = 0;
+		hasCompleted = false;
 	}
 
 	function resetTimer() {
 		stopTimer();
 		remainingSeconds = totalMinutes * 60;
+		hasCompleted = false;
 	}
 
 	function setTimer() {
 		totalMinutes = Math.max(1, Math.min(60, inputMinutes));
 		remainingSeconds = totalMinutes * 60;
 		isRunning = false;
+		hasCompleted = false;
 	}
 
 	function playCompletionSound() {
@@ -205,7 +211,7 @@
 			</div>
 		{/if}
 
-		{#if remainingSeconds === 0 && isRunning === false && totalMinutes > 0}
+		{#if hasCompleted}
 			<div class="completion-message">
 				<h2>Time's Up!</h2>
 				<p>Great job!</p>

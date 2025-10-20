@@ -453,6 +453,9 @@
 		font-size: 0.9rem;
 		color: #2c3e50;
 		text-align: center;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
+		hyphens: auto;
 	}
 
 	.chore-points {
@@ -645,6 +648,8 @@
 		font-size: 1.3rem;
 		color: #2c3e50;
 		font-weight: 500;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
 	}
 
 	.chore-item.completed .chore-name-large {

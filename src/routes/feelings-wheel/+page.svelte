@@ -426,6 +426,7 @@
 		padding: 0.5rem 1rem;
 		border-radius: 20px;
 		font-size: 0.9rem;
+		white-space: nowrap;
 	}
 
 	.feeling-summary {
@@ -513,6 +514,8 @@
 		color: #2c3e50;
 		line-height: 1.6;
 		margin: 0;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
 	}
 
 	.action-buttons {

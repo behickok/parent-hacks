@@ -9,79 +9,97 @@
 		<p>Helpful tools for parents of toddlers and young kids</p>
 	</header>
 
-	<div class="tools-grid">
-		<button class="tool-card" onclick={() => goto('/pompom-tracker')}>
-			<div class="tool-icon">🎨</div>
-			<h2>Pom Pom Tracker</h2>
-			<p>Visual reward system with customizable themes</p>
-		</button>
+	<section class="category-section">
+		<h2 class="category-title">⏰ Timers & Trackers</h2>
+		<div class="tools-grid">
+			<button class="tool-card" onclick={() => goto('/visual-timer')}>
+				<div class="tool-icon">⏰</div>
+				<h3>Visual Timer</h3>
+				<p>Color-coded countdown timer</p>
+			</button>
 
-		<button class="tool-card" onclick={() => goto('/calming-activity')}>
-			<div class="tool-icon">🧘</div>
-			<h2>Calming Activity</h2>
-			<p>Count colored dots to calm your mind</p>
-		</button>
+			<button class="tool-card" onclick={() => goto('/transition-timer')}>
+				<div class="tool-icon">🎵</div>
+				<h3>Transition Timer</h3>
+				<p>Musical timers for cleanup</p>
+			</button>
 
-		<button class="tool-card" onclick={() => goto('/visual-timer')}>
-			<div class="tool-icon">⏰</div>
-			<h2>Visual Timer</h2>
-			<p>Color-coded countdown timer for kids</p>
-		</button>
+			<button class="tool-card" onclick={() => goto('/pompom-tracker')}>
+				<div class="tool-icon">🎨</div>
+				<h3>Pom Pom Tracker</h3>
+				<p>Visual reward system</p>
+			</button>
+		</div>
+	</section>
 
-		<button class="tool-card" onclick={() => goto('/feelings-wheel')}>
-			<div class="tool-icon">💭</div>
-			<h2>Feelings Wheel</h2>
-			<p>Help kids identify and express their emotions</p>
-		</button>
+	<section class="category-section">
+		<h2 class="category-title">📋 Routines & Organization</h2>
+		<div class="tools-grid">
+			<button class="tool-card" onclick={() => goto('/routine-builder')}>
+				<div class="tool-icon">📋</div>
+				<h3>Routine Builder</h3>
+				<p>Custom visual schedules</p>
+			</button>
 
-		<button class="tool-card" onclick={() => goto('/routine-builder')}>
-			<div class="tool-icon">📋</div>
-			<h2>Routine Builder</h2>
-			<p>Create custom visual schedules and routines</p>
-		</button>
+			<button class="tool-card" onclick={() => goto('/chore-chart')}>
+				<div class="tool-icon">✅</div>
+				<h3>Chore Chart</h3>
+				<p>Age-appropriate chores</p>
+			</button>
 
-		<button class="tool-card" onclick={() => goto('/chore-chart')}>
-			<div class="tool-icon">✅</div>
-			<h2>Chore Chart</h2>
-			<p>Age-appropriate chores with points and tracking</p>
-		</button>
+			<button class="tool-card" onclick={() => goto('/activity-generator')}>
+				<div class="tool-icon">🎲</div>
+				<h3>Activity Generator</h3>
+				<p>Quiet time & sensory ideas</p>
+			</button>
+		</div>
+	</section>
 
-		<button class="tool-card" onclick={() => goto('/conflict-mediator')}>
-			<div class="tool-icon">🤝</div>
-			<h2>Conflict Mediator</h2>
-			<p>Guided resolution for sibling conflicts</p>
-		</button>
+	<section class="category-section">
+		<h2 class="category-title">💭 Emotions & Behavior</h2>
+		<div class="tools-grid">
+			<button class="tool-card" onclick={() => goto('/feelings-wheel')}>
+				<div class="tool-icon">💭</div>
+				<h3>Feelings Wheel</h3>
+				<p>Identify and express emotions</p>
+			</button>
 
-		<button class="tool-card" onclick={() => goto('/consequences-guide')}>
-			<div class="tool-icon">🎯</div>
-			<h2>Consequences Guide</h2>
-			<p>Natural and logical consequences for behaviors</p>
-		</button>
+			<button class="tool-card" onclick={() => goto('/calming-activity')}>
+				<div class="tool-icon">🧘</div>
+				<h3>Calming Activity</h3>
+				<p>Count dots to calm down</p>
+			</button>
 
-		<button class="tool-card" onclick={() => goto('/activity-generator')}>
-			<div class="tool-icon">🎲</div>
-			<h2>Activity Generator</h2>
-			<p>Quiet time and sensory break activity ideas</p>
-		</button>
+			<button class="tool-card" onclick={() => goto('/conflict-mediator')}>
+				<div class="tool-icon">🤝</div>
+				<h3>Conflict Mediator</h3>
+				<p>Resolve sibling conflicts</p>
+			</button>
+		</div>
+	</section>
 
-		<button class="tool-card" onclick={() => goto('/transition-timer')}>
-			<div class="tool-icon">🎵</div>
-			<h2>Transition Timer</h2>
-			<p>Musical timers for cleanup and transitions</p>
-		</button>
+	<section class="category-section">
+		<h2 class="category-title">📚 Parent Resources</h2>
+		<div class="tools-grid">
+			<button class="tool-card" onclick={() => goto('/script-library')}>
+				<div class="tool-icon">📚</div>
+				<h3>Script Library</h3>
+				<p>Scripts for tough situations</p>
+			</button>
 
-		<button class="tool-card" onclick={() => goto('/script-library')}>
-			<div class="tool-icon">📚</div>
-			<h2>Script Library</h2>
-			<p>Helpful scripts for common parenting situations</p>
-		</button>
+			<button class="tool-card" onclick={() => goto('/consequences-guide')}>
+				<div class="tool-icon">🎯</div>
+				<h3>Consequences Guide</h3>
+				<p>Natural & logical consequences</p>
+			</button>
 
-		<button class="tool-card" onclick={() => goto('/resources')}>
-			<div class="tool-icon">📖</div>
-			<h2>Resources</h2>
-			<p>Curated articles from parenting experts</p>
-		</button>
-	</div>
+			<button class="tool-card" onclick={() => goto('/resources')}>
+				<div class="tool-icon">📖</div>
+				<h3>Resources</h3>
+				<p>Articles from experts</p>
+			</button>
+		</div>
+	</section>
 </div>
 
 <style>
@@ -116,22 +134,37 @@
 		color: #7f8c8d;
 	}
 
+	.category-section {
+		margin-bottom: 3rem;
+	}
+
+	.category-title {
+		font-size: 1.5rem;
+		color: #2c3e50;
+		margin-bottom: 1rem;
+		padding-bottom: 0.5rem;
+		border-bottom: 3px solid #3498db;
+	}
+
 	.tools-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-		gap: 2rem;
-		margin-top: 2rem;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		gap: 1.5rem;
 	}
 
 	.tool-card {
 		background: white;
 		border: 2px solid #e0e0e0;
 		border-radius: 12px;
-		padding: 2rem;
+		padding: 1.5rem;
 		text-align: center;
 		cursor: pointer;
 		transition: all 0.3s ease;
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		min-height: 180px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 	}
 
 	.tool-card:hover {
@@ -141,18 +174,39 @@
 	}
 
 	.tool-icon {
-		font-size: 4rem;
-		margin-bottom: 1rem;
+		font-size: 3.5rem;
+		margin-bottom: 0.75rem;
 	}
 
-	.tool-card h2 {
-		font-size: 1.5rem;
+	.tool-card h3 {
+		font-size: 1.2rem;
 		color: #2c3e50;
 		margin-bottom: 0.5rem;
+		margin-top: 0;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
 	}
 
 	.tool-card p {
 		color: #7f8c8d;
-		font-size: 0.95rem;
+		font-size: 0.9rem;
+		margin: 0;
+		line-height: 1.4;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
+	}
+
+	@media (max-width: 768px) {
+		.tools-grid {
+			grid-template-columns: 1fr;
+		}
+
+		header h1 {
+			font-size: 2rem;
+		}
+
+		.category-title {
+			font-size: 1.3rem;
+		}
 	}
 </style>

@@ -6,6 +6,7 @@
 	let duration = $state(5);
 	let remainingSeconds = $state(0);
 	let isRunning = $state(false);
+	let hasCompleted = $state(false);
 	let intervalId = null;
 	let selectedSong = $state('cleanup');
 
@@ -158,6 +159,7 @@
 				remainingSeconds--;
 				if (remainingSeconds <= 0) {
 					stopTimer();
+					hasCompleted = true;
 				}
 			}, 1000);
 		} else if (intervalId) {
@@ -173,6 +175,7 @@
 		if (remainingSeconds === 0) {
 			remainingSeconds = duration * 60;
 		}
+		hasCompleted = false;
 		isRunning = true;
 	}
 
@@ -183,11 +186,13 @@
 	function stopTimer() {
 		isRunning = false;
 		remainingSeconds = 0;
+		hasCompleted = false;
 	}
 
 	function resetTimer() {
 		stopTimer();
 		remainingSeconds = duration * 60;
+		hasCompleted = false;
 	}
 
 	function getTimerColor() {
@@ -208,6 +213,7 @@
 		transitionType = type;
 		duration = transitions[type].defaultDuration;
 		selectedSong = transitions[type].songs[0].id;
+		hasCompleted = false;
 	}
 
 	function getCurrentSong() {
@@ -340,7 +346,7 @@
 		</div>
 	</div>
 
-	{#if remainingSeconds === 0 && !isRunning && duration > 0}
+	{#if hasCompleted}
 		<div class="completion-message" style="background: {transitions[transitionType].color}">
 			<h2>🎉 Time's Up! 🎉</h2>
 			<p>Great job with {transitions[transitionType].name.toLowerCase()}!</p>
@@ -514,6 +520,8 @@
 		cursor: pointer;
 		transition: all 0.3s;
 		font-size: 0.95rem;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
 	}
 
 	.song-button:hover:not(:disabled) {
@@ -580,6 +588,8 @@
 		line-height: 1.8;
 		color: #2c3e50;
 		font-style: italic;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
 	}
 
 	.lyrics p {

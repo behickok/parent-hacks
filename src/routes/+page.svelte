@@ -28,6 +28,18 @@
 			<p>Color-coded countdown timer for kids</p>
 		</button>
 
+		<button class="tool-card" onclick={() => goto('/feelings-wheel')}>
+			<div class="tool-icon">💭</div>
+			<h2>Feelings Wheel</h2>
+			<p>Help kids identify and express their emotions</p>
+		</button>
+
+		<button class="tool-card" onclick={() => goto('/routine-builder')}>
+			<div class="tool-icon">📋</div>
+			<h2>Routine Builder</h2>
+			<p>Create custom visual schedules and routines</p>
+		</button>
+
 		<button class="tool-card" onclick={() => goto('/script-library')}>
 			<div class="tool-icon">📚</div>
 			<h2>Script Library</h2>

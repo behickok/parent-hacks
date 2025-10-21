@@ -121,7 +121,7 @@
 				materials: ['blocks'],
 				description: 'Build detailed structures following instructions or own design.',
 				duration: '30-60 minutes',
-				setup: 'Provide Legos, K\'nex, or other building materials with instructions if desired.'
+				setup: "Provide Legos, K'nex, or other building materials with instructions if desired."
 			},
 			{
 				name: 'Journaling/Writing',
@@ -208,7 +208,7 @@
 			{
 				name: 'Weighted Lap Pad',
 				type: 'Proprioceptive',
-				description: 'Place a weighted lap pad or heavy blanket on child\'s lap.',
+				description: "Place a weighted lap pad or heavy blanket on child's lap.",
 				duration: '10-20 minutes',
 				when: 'During quiet time, homework, or to calm',
 				icon: '🛏️'
@@ -330,7 +330,7 @@
 
 <div class="container">
 	<header>
-		<button class="back-button" onclick={() => goto('/')}>← Back</button>
+		<button class="back-button" onclick={() => goto('/')}>↩︎ Back</button>
 		<h1>Activity Generator</h1>
 		<div style="width: 100px;"></div>
 	</header>
@@ -346,21 +346,30 @@
 				<button
 					class="type-button"
 					class:active={activityType === 'quiet'}
-					onclick={() => { activityType = 'quiet'; reset(); }}
+					onclick={() => {
+						activityType = 'quiet';
+						reset();
+					}}
 				>
 					🤫 Quiet Time Activities
 				</button>
 				<button
 					class="type-button"
 					class:active={activityType === 'calming'}
-					onclick={() => { activityType = 'calming'; reset(); }}
+					onclick={() => {
+						activityType = 'calming';
+						reset();
+					}}
 				>
 					😌 Calming Sensory Breaks
 				</button>
 				<button
 					class="type-button"
 					class:active={activityType === 'alerting'}
-					onclick={() => { activityType = 'alerting'; reset(); }}
+					onclick={() => {
+						activityType = 'alerting';
+						reset();
+					}}
 				>
 					⚡ Alerting Sensory Breaks
 				</button>
@@ -380,7 +389,10 @@
 						<button
 							class="material-chip"
 							class:selected={availableMaterials.includes(material.id)}
-							onclick={() => { toggleMaterial(material.id); reset(); }}
+							onclick={() => {
+								toggleMaterial(material.id);
+								reset();
+							}}
 						>
 							<span class="material-icon">{material.icon}</span>
 							<span class="material-name">{material.name}</span>
@@ -392,9 +404,7 @@
 	</div>
 
 	<div class="generate-section">
-		<button class="generate-button" onclick={generateActivity}>
-			🎲 Generate Activity Idea
-		</button>
+		<button class="generate-button" onclick={generateActivity}> 🎲 Generate Activity Idea </button>
 	</div>
 
 	{#if currentActivity}
@@ -421,7 +431,8 @@
 							{@const mat = materials.find((m) => m.id === materialId)}
 							{#if mat}
 								<span class="material-tag">
-									{mat.icon} {mat.name}
+									{mat.icon}
+									{mat.name}
 								</span>
 							{/if}
 						{/each}
@@ -440,17 +451,17 @@
 
 				<div class="sensory-details">
 					<div class="detail-item">
-						<strong>Duration:</strong> {currentActivity.duration}
+						<strong>Duration:</strong>
+						{currentActivity.duration}
 					</div>
 					<div class="detail-item">
-						<strong>When to use:</strong> {currentActivity.when}
+						<strong>When to use:</strong>
+						{currentActivity.when}
 					</div>
 				</div>
 			{/if}
 
-			<button class="another-button" onclick={generateActivity}>
-				Generate Another Activity
-			</button>
+			<button class="another-button" onclick={generateActivity}> Generate Another Activity </button>
 		</div>
 
 		<div class="tips-box">
@@ -485,6 +496,10 @@
 </div>
 
 <style>
+	:global(body) {
+		background: linear-gradient(135deg, #f0f9ff via #fdf2f8 to #fef3c7);
+	}
+
 	.container {
 		max-width: 900px;
 		margin: 0 auto;
@@ -501,39 +516,40 @@
 
 	header h1 {
 		font-size: 2rem;
-		color: #2c3e50;
+		color: #1f2937;
 		flex: 1;
 		text-align: center;
 	}
 
 	.back-button {
-		background: #3498db;
-		color: white;
-		border: none;
+		background: transparent;
+		color: #374151;
+		border: 1px solid #d1d5db;
 		padding: 0.75rem 1.5rem;
-		border-radius: 8px;
+		border-radius: 9999px;
 		cursor: pointer;
 		font-size: 1rem;
-		transition: background 0.3s;
+		transition: all 0.3s;
 	}
 
 	.back-button:hover {
-		background: #2980b9;
+		background: rgba(255, 255, 255, 0.8);
+		border-color: #9ca3af;
 	}
 
 	.intro {
 		text-align: center;
 		font-size: 1.2rem;
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 2rem;
 	}
 
 	.settings-section {
-		background: white;
+		background: rgba(255, 255, 255, 0.8);
 		padding: 1.5rem;
-		border-radius: 12px;
+		border-radius: 1rem;
 		margin-bottom: 2rem;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 	}
 
 	.setting {
@@ -547,7 +563,7 @@
 	.setting label {
 		display: block;
 		font-weight: 600;
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 0.5rem;
 	}
 
@@ -562,19 +578,19 @@
 		min-width: 200px;
 		padding: 1rem;
 		border: 2px solid #e0e0e0;
-		background: white;
-		border-radius: 8px;
+		background: rgba(255, 255, 255, 0.8);
+		border-radius: 1rem;
 		cursor: pointer;
 		font-size: 1rem;
 		transition: all 0.3s;
 	}
 
 	.type-button:hover {
-		border-color: #3498db;
+		border-color: #3b82f6;
 	}
 
 	.type-button.active {
-		border-color: #3498db;
+		border-color: #3b82f6;
 		background: #e3f2fd;
 		font-weight: 600;
 	}
@@ -591,7 +607,7 @@
 	}
 
 	.material-chip {
-		background: white;
+		background: rgba(255, 255, 255, 0.8);
 		border: 2px solid #e0e0e0;
 		border-radius: 20px;
 		padding: 0.5rem 1rem;
@@ -604,7 +620,7 @@
 	}
 
 	.material-chip:hover {
-		border-color: #3498db;
+		border-color: #3b82f6;
 	}
 
 	.material-chip.selected {
@@ -617,7 +633,7 @@
 	}
 
 	.material-name {
-		color: #2c3e50;
+		color: #1f2937;
 	}
 
 	.generate-section {
@@ -630,25 +646,25 @@
 		color: white;
 		border: none;
 		padding: 1.5rem 3rem;
-		border-radius: 12px;
+		border-radius: 1rem;
 		cursor: pointer;
 		font-size: 1.3rem;
 		font-weight: 600;
 		transition: all 0.3s;
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 	}
 
 	.generate-button:hover {
 		transform: translateY(-2px);
-		box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 	}
 
 	.activity-result {
-		background: white;
+		background: rgba(255, 255, 255, 0.8);
 		padding: 2rem;
-		border-radius: 12px;
+		border-radius: 1rem;
 		margin-bottom: 2rem;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 	}
 
 	.activity-header {
@@ -658,12 +674,12 @@
 
 	.activity-header h2 {
 		margin: 0 0 0.5rem 0;
-		color: #2c3e50;
+		color: #1f2937;
 		font-size: 2rem;
 	}
 
 	.duration {
-		color: #7f8c8d;
+		color: #6b7280;
 		font-size: 1.1rem;
 		font-weight: 600;
 	}
@@ -680,12 +696,12 @@
 
 	.sensory-header h2 {
 		margin: 0 0 0.5rem 0;
-		color: #2c3e50;
+		color: #1f2937;
 		font-size: 2rem;
 	}
 
 	.sensory-type {
-		color: #7f8c8d;
+		color: #6b7280;
 		font-size: 1.1rem;
 		font-weight: 600;
 	}
@@ -693,7 +709,7 @@
 	.activity-description {
 		font-size: 1.2rem;
 		line-height: 1.6;
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 1.5rem;
 		text-align: center;
 		word-wrap: break-word;
@@ -708,12 +724,12 @@
 
 	.activity-setup h3,
 	.materials-needed h3 {
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 0.5rem;
 	}
 
 	.activity-setup p {
-		color: #2c3e50;
+		color: #1f2937;
 		line-height: 1.6;
 		word-wrap: break-word;
 		overflow-wrap: break-word;
@@ -727,21 +743,21 @@
 
 	.material-tag {
 		background: #e3f2fd;
-		color: #2c3e50;
+		color: #1f2937;
 		padding: 0.5rem 1rem;
 		border-radius: 20px;
 		font-size: 0.9rem;
-		border: 2px solid #3498db;
+		border: 2px solid #3b82f6;
 	}
 
 	.sensory-details {
 		background: #f8f9fa;
 		padding: 1rem;
-		border-radius: 8px;
+		border-radius: 1rem;
 	}
 
 	.detail-item {
-		color: #2c3e50;
+		color: #1f2937;
 		line-height: 1.8;
 		margin-bottom: 0.5rem;
 	}
@@ -752,11 +768,11 @@
 
 	.another-button {
 		width: 100%;
-		background: #3498db;
+		background: #3b82f6;
 		color: white;
 		border: none;
 		padding: 1rem;
-		border-radius: 8px;
+		border-radius: 1rem;
 		cursor: pointer;
 		font-size: 1.1rem;
 		font-weight: 600;
@@ -765,20 +781,20 @@
 	}
 
 	.another-button:hover {
-		background: #2980b9;
+		background: #2563eb;
 		transform: translateY(-2px);
 	}
 
 	.tips-box {
 		background: #e8f4f8;
 		padding: 1.5rem;
-		border-radius: 12px;
-		border-left: 4px solid #3498db;
+		border-radius: 1rem;
+		border-left: 4px solid #3b82f6;
 	}
 
 	.tips-box h3 {
 		margin-top: 0;
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 1rem;
 	}
 
@@ -788,7 +804,7 @@
 	}
 
 	.tips-box li {
-		color: #2c3e50;
+		color: #1f2937;
 		line-height: 1.8;
 		margin-bottom: 0.5rem;
 	}

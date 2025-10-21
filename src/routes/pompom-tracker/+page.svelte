@@ -72,7 +72,7 @@
 
 <div class="container">
 	<header>
-		<button class="back-button" onclick={() => goto('/')}>← Back</button>
+		<button class="back-button" onclick={() => goto('/')}>↩︎ Back</button>
 		<h1>{themes[theme].name} Tracker</h1>
 		<button class="settings-button" onclick={() => (showSettings = !showSettings)}>⚙️</button>
 	</header>
@@ -120,10 +120,7 @@
 
 	<div class="tracker-container">
 		<div class="progress-bar">
-			<div
-				class="progress-fill"
-				style="width: {(currentCount / targetCount) * 100}%"
-			></div>
+			<div class="progress-fill" style="width: {(currentCount / targetCount) * 100}%"></div>
 		</div>
 
 		<div class="counter">
@@ -143,9 +140,7 @@
 				Remove One
 			</button>
 			<button class="reset-button" onclick={reset}>Reset</button>
-			<button class="add-button" onclick={addPompom}>
-				Add One
-			</button>
+			<button class="add-button" onclick={addPompom}> Add One </button>
 		</div>
 
 		{#if currentCount >= targetCount}
@@ -155,6 +150,10 @@
 </div>
 
 <style>
+	:global(body) {
+		background: linear-gradient(135deg, #f0f9ff via #fdf2f8 to #fef3c7);
+	}
+
 	.container {
 		max-width: 800px;
 		margin: 0 auto;
@@ -171,40 +170,41 @@
 
 	header h1 {
 		font-size: 2rem;
-		color: #2c3e50;
+		color: #1f2937;
 		flex: 1;
 		text-align: center;
 	}
 
 	.back-button,
 	.settings-button {
-		background: #3498db;
-		color: white;
-		border: none;
+		background: transparent;
+		color: #374151;
+		border: 1px solid #d1d5db;
 		padding: 0.75rem 1.5rem;
-		border-radius: 8px;
+		border-radius: 9999px;
 		cursor: pointer;
 		font-size: 1rem;
-		transition: background 0.3s;
+		transition: all 0.3s;
 	}
 
 	.back-button:hover,
 	.settings-button:hover {
-		background: #2980b9;
+		background: rgba(255, 255, 255, 0.8);
+		border-color: #9ca3af;
 	}
 
 	.settings-panel {
-		background: white;
+		background: rgba(255, 255, 255, 0.8);
 		border: 2px solid #e0e0e0;
-		border-radius: 12px;
+		border-radius: 1rem;
 		padding: 2rem;
 		margin-bottom: 2rem;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 	}
 
 	.settings-panel h2 {
 		margin-top: 0;
-		color: #2c3e50;
+		color: #1f2937;
 	}
 
 	.setting {
@@ -214,7 +214,7 @@
 	.setting label {
 		display: block;
 		font-weight: 600;
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 0.5rem;
 	}
 
@@ -222,7 +222,7 @@
 		width: 100%;
 		padding: 0.75rem;
 		border: 2px solid #e0e0e0;
-		border-radius: 8px;
+		border-radius: 1rem;
 		font-size: 1rem;
 	}
 
@@ -234,9 +234,9 @@
 	}
 
 	.theme-button {
-		background: white;
+		background: rgba(255, 255, 255, 0.8);
 		border: 2px solid #e0e0e0;
-		border-radius: 8px;
+		border-radius: 1rem;
 		padding: 1rem;
 		cursor: pointer;
 		transition: all 0.3s;
@@ -247,12 +247,12 @@
 	}
 
 	.theme-button:hover {
-		border-color: #3498db;
+		border-color: #3b82f6;
 		transform: translateY(-2px);
 	}
 
 	.theme-button.selected {
-		border-color: #3498db;
+		border-color: #3b82f6;
 		background: #e3f2fd;
 	}
 
@@ -262,7 +262,7 @@
 
 	.theme-name {
 		font-size: 0.9rem;
-		color: #2c3e50;
+		color: #1f2937;
 	}
 
 	.setting-actions {
@@ -276,7 +276,7 @@
 		flex: 1;
 		padding: 0.75rem;
 		border: none;
-		border-radius: 8px;
+		border-radius: 1rem;
 		font-size: 1rem;
 		cursor: pointer;
 		transition: background 0.3s;
@@ -293,7 +293,7 @@
 
 	.cancel-button {
 		background: #e0e0e0;
-		color: #2c3e50;
+		color: #1f2937;
 	}
 
 	.cancel-button:hover {
@@ -301,10 +301,10 @@
 	}
 
 	.tracker-container {
-		background: white;
-		border-radius: 12px;
+		background: rgba(255, 255, 255, 0.8);
+		border-radius: 1rem;
 		padding: 2rem;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 	}
 
 	.progress-bar {
@@ -318,7 +318,7 @@
 
 	.progress-fill {
 		height: 100%;
-		background: linear-gradient(90deg, #3498db, #2ecc71);
+		background: linear-gradient(90deg, #3b82f6, #2ecc71);
 		transition: width 0.5s ease;
 	}
 
@@ -326,16 +326,16 @@
 		text-align: center;
 		font-size: 2.5rem;
 		font-weight: bold;
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 2rem;
 	}
 
 	.current {
-		color: #3498db;
+		color: #3b82f6;
 	}
 
 	.separator {
-		color: #7f8c8d;
+		color: #6b7280;
 	}
 
 	.target {
@@ -344,9 +344,9 @@
 
 	.jar {
 		min-height: 300px;
-		background: linear-gradient(to bottom, rgba(52, 152, 219, 0.1), rgba(52, 152, 219, 0.2));
-		border: 3px solid #3498db;
-		border-radius: 20px;
+		background: linear-gradient(to bottom, rgba(59, 130, 246, 0.1), rgba(59, 130, 246, 0.2));
+		border: 3px solid #3b82f6;
+		border-radius: 1.5rem;
 		padding: 2rem;
 		display: flex;
 		flex-wrap: wrap;
@@ -354,7 +354,7 @@
 		justify-content: center;
 		align-content: flex-start;
 		margin-bottom: 2rem;
-		box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
+		box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.08);
 	}
 
 	.item {
@@ -387,7 +387,7 @@
 		padding: 1rem 2rem;
 		font-size: 1.1rem;
 		border: none;
-		border-radius: 8px;
+		border-radius: 1rem;
 		cursor: pointer;
 		transition: all 0.3s;
 		font-weight: 600;
@@ -419,7 +419,7 @@
 	}
 
 	.reset-button:hover {
-		background: #7f8c8d;
+		background: #6b7280;
 		transform: translateY(-2px);
 	}
 

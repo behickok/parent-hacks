@@ -16,33 +16,38 @@
 		{
 			name: 'Visual Timer',
 			category: 'behavior',
-			description: 'Time Timer® visual countdown helps kids understand time remaining during activities and transitions.',
-			reason: 'Perfect companion to our Transition Timer - provides physical visual aid that kids can see.',
-			link: 'https://www.amazon.com/s?k=time+timer+visual',
+			description:
+				'Time Timer® visual countdown helps kids understand time remaining during activities and transitions.',
+			reason:
+				'Perfect companion to our Transition Timer - provides physical visual aid that kids can see.',
+			link: 'https://www.amazon.com/s?k=time+timer+visual&tag=handprinted-20',
 			price: '$25-40'
 		},
 		{
 			name: 'Feelings Poster Set',
 			category: 'behavior',
-			description: 'Colorful emotion charts with faces and labels to help children identify and express feelings.',
+			description:
+				'Colorful emotion charts with faces and labels to help children identify and express feelings.',
 			reason: 'Enhances our Feelings Wheel by providing visual reference throughout the day.',
-			link: 'https://www.amazon.com/s?k=feelings+emotions+poster+chart+kids',
+			link: 'https://www.amazon.com/s?k=feelings+emotions+poster+chart+kids&tag=handprinted-20',
 			price: '$10-20'
 		},
 		{
 			name: 'Chore Chart Magnets',
 			category: 'organization',
 			description: 'Reusable magnetic chore charts with task tiles and reward system.',
-			reason: 'Physical version of our Chore Chart - great for younger kids who need tangible tracking.',
-			link: 'https://www.amazon.com/s?k=magnetic+chore+chart+kids',
+			reason:
+				'Physical version of our Chore Chart - great for younger kids who need tangible tracking.',
+			link: 'https://www.amazon.com/s?k=magnetic+chore+chart+kids&tag=handprinted-20',
 			price: '$15-30'
 		},
 		{
 			name: 'Weighted Blanket',
 			category: 'sensory',
-			description: 'Calming weighted blanket provides gentle pressure for anxiety relief and better sleep.',
+			description:
+				'Calming weighted blanket provides gentle pressure for anxiety relief and better sleep.',
 			reason: 'Excellent addition to our Calming Activities for sensory-seeking children.',
-			link: 'https://www.amazon.com/s?k=weighted+blanket+kids',
+			link: 'https://www.amazon.com/s?k=weighted+blanket+kids&tag=handprinted-20',
 			price: '$40-80'
 		},
 		{
@@ -50,15 +55,17 @@
 			category: 'sensory',
 			description: 'Kid-safe volume-limited headphones that block distracting sounds.',
 			reason: 'Helps with focus during homework and calming down during overwhelming moments.',
-			link: 'https://www.amazon.com/s?k=kids+headphones+noise+canceling',
+			link: 'https://www.amazon.com/s?k=kids+headphones+noise+canceling&tag=handprinted-20',
 			price: '$20-50'
 		},
 		{
 			name: 'Fidget Tool Set',
 			category: 'sensory',
-			description: 'Variety pack of sensory fidgets (stress balls, tangles, putty) for focus and calm.',
-			reason: 'Works with our Calming Activities - gives hands something to do during emotional moments.',
-			link: 'https://www.amazon.com/s?k=sensory+fidget+toys+set',
+			description:
+				'Variety pack of sensory fidgets (stress balls, tangles, putty) for focus and calm.',
+			reason:
+				'Works with our Calming Activities - gives hands something to do during emotional moments.',
+			link: 'https://www.amazon.com/s?k=sensory+fidget+toys+set&tag=handprinted-20',
 			price: '$15-25'
 		},
 		{
@@ -66,15 +73,17 @@
 			category: 'organization',
 			description: 'Reusable morning/evening routine checklist board kids can check off each day.',
 			reason: 'Physical complement to our Routine Builder - great for bathroom or bedroom wall.',
-			link: 'https://www.amazon.com/s?k=kids+routine+chart+dry+erase',
+			link: 'https://www.amazon.com/s?k=kids+routine+chart+dry+erase&tag=handprinted-20',
 			price: '$12-25'
 		},
 		{
 			name: 'Social Stories Books',
 			category: 'learning',
-			description: 'Books that teach emotional regulation, sharing, and social skills through stories.',
-			reason: 'Extends our Script Library with stories kids can read independently or with parents.',
-			link: 'https://www.amazon.com/s?k=social+stories+books+kids',
+			description:
+				'Books that teach emotional regulation, sharing, and social skills through stories.',
+			reason:
+				'Extends our Script Library with stories kids can read independently or with parents.',
+			link: 'https://www.amazon.com/s?k=social+stories+books+kids&tag=handprinted-20',
 			price: '$10-20 each'
 		},
 		{
@@ -82,31 +91,33 @@
 			category: 'behavior',
 			description: 'Motivational sticker charts with fun themes and milestone rewards.',
 			reason: 'Pairs perfectly with our Pom Pom Tracker for variety in positive reinforcement.',
-			link: 'https://www.amazon.com/s?k=reward+sticker+chart+kids',
+			link: 'https://www.amazon.com/s?k=reward+sticker+chart+kids&tag=handprinted-20',
 			price: '$8-15'
 		},
 		{
 			name: 'Breathing Buddies Plush',
 			category: 'sensory',
-			description: 'Stuffed animals designed for breathing exercises - rises and falls with breath.',
+			description:
+				'Stuffed animals designed for breathing exercises - rises and falls with breath.',
 			reason: 'Makes our Calming Activities breathing exercises more engaging for young children.',
-			link: 'https://www.amazon.com/s?k=breathing+buddy+plush',
+			link: 'https://www.amazon.com/s?k=breathing+buddy+plush&tag=handprinted-20',
 			price: '$15-30'
 		},
 		{
-			name: 'Kids\' Journal',
+			name: "Kids' Journal",
 			category: 'learning',
 			description: 'Guided journal with prompts for emotions, gratitude, and daily reflection.',
 			reason: 'Helps older kids process feelings identified in our Feelings Wheel.',
-			link: 'https://www.amazon.com/s?k=kids+guided+journal+emotions',
+			link: 'https://www.amazon.com/s?k=kids+guided+journal+emotions&tag=handprinted-20',
 			price: '$10-18'
 		},
 		{
 			name: 'Calm Down Corner Kit',
 			category: 'sensory',
-			description: 'Complete kit with cushion, breathing ball, emotion cards, and calming activities.',
+			description:
+				'Complete kit with cushion, breathing ball, emotion cards, and calming activities.',
 			reason: 'Creates dedicated physical space for using our Calming Activities tools.',
-			link: 'https://www.amazon.com/s?k=calm+down+corner+kit',
+			link: 'https://www.amazon.com/s?k=calm+down+corner+kit&tag=handprinted-20',
 			price: '$40-70'
 		},
 		{
@@ -114,7 +125,7 @@
 			category: 'organization',
 			description: 'Large wall calendar with color-coded sections for each family member.',
 			reason: 'Helps visualize routines and activities planned in our Routine Builder.',
-			link: 'https://www.amazon.com/s?k=family+wall+calendar+board',
+			link: 'https://www.amazon.com/s?k=family+wall+calendar+board&tag=handprinted-20',
 			price: '$20-40'
 		},
 		{
@@ -122,7 +133,7 @@
 			category: 'behavior',
 			description: 'Dollhouse, action figures, and puppets for acting out scenarios and emotions.',
 			reason: 'Supports our Conflict Mediator - kids can role-play solutions with toys.',
-			link: 'https://www.amazon.com/s?k=play+therapy+toys',
+			link: 'https://www.amazon.com/s?k=play+therapy+toys&tag=handprinted-20',
 			price: '$25-60'
 		},
 		{
@@ -130,80 +141,91 @@
 			category: 'organization',
 			description: 'Multiple timers (1, 3, 5, 10 min) for visual time management without screens.',
 			reason: 'Screen-free alternative to our Visual Timer for quick tasks and transitions.',
-			link: 'https://www.amazon.com/s?k=sand+timer+set+kids',
+			link: 'https://www.amazon.com/s?k=sand+timer+set+kids&tag=handprinted-20',
 			price: '$12-20'
 		},
 		// Parenting Books
 		{
 			name: 'The Whole-Brain Child',
 			category: 'books',
-			description: 'By Daniel J. Siegel & Tina Payne Bryson - Revolutionary strategies to nurture your child\'s developing mind.',
+			description:
+				"By Daniel J. Siegel & Tina Payne Bryson - Revolutionary strategies to nurture your child's developing mind.",
 			reason: 'Understanding brain development helps you use our emotional tools more effectively.',
-			link: 'https://www.amazon.com/Whole-Brain-Child-Revolutionary-Strategies-Developing/dp/0553386697',
+			link: 'https://www.amazon.com/Whole-Brain-Child-Revolutionary-Strategies-Developing/dp/0553386697?tag=handprinted-20',
 			price: '$11-17'
 		},
 		{
 			name: 'How to Talk So Kids Will Listen',
 			category: 'books',
-			description: 'By Adele Faber & Elaine Mazlish - Practical, innovative ways to solve common communication problems.',
-			reason: 'Perfect companion to our Script Library - provides the framework behind effective communication.',
-			link: 'https://www.amazon.com/How-Talk-Kids-Will-Listen/dp/1451663889',
+			description:
+				'By Adele Faber & Elaine Mazlish - Practical, innovative ways to solve common communication problems.',
+			reason:
+				'Perfect companion to our Script Library - provides the framework behind effective communication.',
+			link: 'https://www.amazon.com/How-Talk-Kids-Will-Listen/dp/1451663889?tag=handprinted-20',
 			price: '$11-18'
 		},
 		{
 			name: 'No-Drama Discipline',
 			category: 'books',
-			description: 'By Daniel J. Siegel & Tina Payne Bryson - The whole-brain way to calm chaos and nurture developing minds.',
+			description:
+				'By Daniel J. Siegel & Tina Payne Bryson - The whole-brain way to calm chaos and nurture developing minds.',
 			reason: 'Explains the "why" behind natural consequences in our Consequences Guide.',
-			link: 'https://www.amazon.com/No-Drama-Discipline-Whole-Brain-Nurture-Developing/dp/034554806X',
+			link: 'https://www.amazon.com/No-Drama-Discipline-Whole-Brain-Nurture-Developing/dp/034554806X?tag=handprinted-20',
 			price: '$12-18'
 		},
 		{
 			name: 'The Explosive Child',
 			category: 'books',
-			description: 'By Ross W. Greene - A new approach for understanding and parenting easily frustrated children.',
-			reason: 'Essential reading for using our Conflict Mediator and calming strategies effectively.',
-			link: 'https://www.amazon.com/Explosive-Child-Understanding-Frustrated-Chronically/dp/0062270451',
+			description:
+				'By Ross W. Greene - A new approach for understanding and parenting easily frustrated children.',
+			reason:
+				'Essential reading for using our Conflict Mediator and calming strategies effectively.',
+			link: 'https://www.amazon.com/Explosive-Child-Understanding-Frustrated-Chronically/dp/0062270451?tag=handprinted-20',
 			price: '$13-20'
 		},
 		{
 			name: 'Peaceful Parent, Happy Kids',
 			category: 'books',
-			description: 'By Dr. Laura Markham - How to stop yelling and start connecting with practical tools for emotional regulation.',
-			reason: 'The philosophy behind all our parenting tools - building connection while setting limits.',
-			link: 'https://www.amazon.com/Peaceful-Parent-Happy-Kids-Connecting/dp/0399160280',
+			description:
+				'By Dr. Laura Markham - How to stop yelling and start connecting with practical tools for emotional regulation.',
+			reason:
+				'The philosophy behind all our parenting tools - building connection while setting limits.',
+			link: 'https://www.amazon.com/Peaceful-Parent-Happy-Kids-Connecting/dp/0399160280?tag=handprinted-20',
 			price: '$13-19'
 		},
 		{
 			name: 'Hunt, Gather, Parent',
 			category: 'books',
-			description: 'By Michaeleen Doucleff - What ancient cultures can teach us about raising children.',
+			description:
+				'By Michaeleen Doucleff - What ancient cultures can teach us about raising children.',
 			reason: 'Fresh perspective on routines, chores, and emotional development.',
-			link: 'https://www.amazon.com/Hunt-Gather-Parent-Ancient-Cultures/dp/1982149671',
+			link: 'https://www.amazon.com/Hunt-Gather-Parent-Ancient-Cultures/dp/1982149671?tag=handprinted-20',
 			price: '$15-28'
 		},
 		{
 			name: 'Positive Discipline',
 			category: 'books',
-			description: 'By Jane Nelsen - The classic guide to helping children develop self-discipline and responsibility.',
-			reason: 'The research foundation for our natural consequences and routine-building approaches.',
-			link: 'https://www.amazon.com/Positive-Discipline-Jane-Nelsen-EdD/dp/0345487672',
+			description:
+				'By Jane Nelsen - The classic guide to helping children develop self-discipline and responsibility.',
+			reason:
+				'The research foundation for our natural consequences and routine-building approaches.',
+			link: 'https://www.amazon.com/Positive-Discipline-Jane-Nelsen-EdD/dp/0345487672?tag=handprinted-20',
 			price: '$12-17'
 		},
 		{
 			name: 'The Power of Showing Up',
 			category: 'books',
-			description: 'By Daniel J. Siegel & Tina Payne Bryson - How parental presence shapes who our kids become.',
-			reason: 'Understanding attachment helps you use all our emotional tools with greater intention.',
-			link: 'https://www.amazon.com/Power-Showing-Up-Parental-Presence/dp/0525622985',
+			description:
+				'By Daniel J. Siegel & Tina Payne Bryson - How parental presence shapes who our kids become.',
+			reason:
+				'Understanding attachment helps you use all our emotional tools with greater intention.',
+			link: 'https://www.amazon.com/Power-Showing-Up-Parental-Presence/dp/0525622985?tag=handprinted-20',
 			price: '$14-19'
 		}
 	];
 
 	const filteredProducts = $derived(
-		selectedCategory === 'all'
-			? products
-			: products.filter((p) => p.category === selectedCategory)
+		selectedCategory === 'all' ? products : products.filter((p) => p.category === selectedCategory)
 	);
 </script>
 
@@ -212,7 +234,7 @@
 </svelte:head>
 
 <div class="container">
-	<button class="back-btn" onclick={() => goto('/')}>← Back to Home</button>
+	<button class="back-btn" onclick={() => goto('/')}>↩︎ Back to Home</button>
 
 	<div class="header">
 		<h1>🛍️ Helpful Products for Parents</h1>
@@ -256,13 +278,17 @@
 	<div class="disclaimer">
 		<p>
 			<strong>Note:</strong> These are general recommendations based on common parenting needs. We are
-			not affiliated with specific brands, and prices are approximate. Always research products and
-			consult with professionals for your child's specific needs.
+			not affiliated with specific brands, and prices are approximate. Always research products and consult
+			with professionals for your child's specific needs.
 		</p>
 	</div>
 </div>
 
 <style>
+	:global(body) {
+		background: linear-gradient(135deg, #f0f9ff via #fdf2f8 to #fef3c7);
+	}
+
 	.container {
 		max-width: 1200px;
 		margin: 0 auto;
@@ -270,11 +296,11 @@
 	}
 
 	.back-btn {
-		background: white;
-		border: 2px solid #3498db;
-		color: #3498db;
+		background: transparent;
+		border: 1px solid #d1d5db;
+		color: #374151;
 		padding: 0.5rem 1rem;
-		border-radius: 8px;
+		border-radius: 9999px;
 		cursor: pointer;
 		font-size: 1rem;
 		margin-bottom: 1.5rem;
@@ -282,8 +308,8 @@
 	}
 
 	.back-btn:hover {
-		background: #3498db;
-		color: white;
+		background: rgba(255, 255, 255, 0.8);
+		border-color: #9ca3af;
 	}
 
 	.header {
@@ -292,13 +318,13 @@
 	}
 
 	h1 {
-		color: #2c3e50;
+		color: #1f2937;
 		font-size: 2.5rem;
 		margin-bottom: 0.5rem;
 	}
 
 	.subtitle {
-		color: #7f8c8d;
+		color: #6b7280;
 		font-size: 1.1rem;
 		max-width: 700px;
 		margin: 0 auto;
@@ -313,7 +339,7 @@
 	}
 
 	.category-btn {
-		background: white;
+		background: rgba(255, 255, 255, 0.8);
 		border: 2px solid #e0e0e0;
 		padding: 0.6rem 1.2rem;
 		border-radius: 25px;
@@ -326,14 +352,14 @@
 	}
 
 	.category-btn:hover {
-		border-color: #3498db;
+		border-color: #3b82f6;
 		transform: translateY(-2px);
 	}
 
 	.category-btn.active {
-		background: #3498db;
+		background: #3b82f6;
 		color: white;
-		border-color: #3498db;
+		border-color: #3b82f6;
 	}
 
 	.emoji {
@@ -348,11 +374,13 @@
 	}
 
 	.product-card {
-		background: white;
-		border-radius: 12px;
+		background: rgba(255, 255, 255, 0.8);
+		border-radius: 1rem;
 		padding: 1.5rem;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-		transition: transform 0.3s, box-shadow 0.3s;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+		transition:
+			transform 0.3s,
+			box-shadow 0.3s;
 		display: flex;
 		flex-direction: column;
 	}
@@ -371,7 +399,7 @@
 	}
 
 	h3 {
-		color: #2c3e50;
+		color: #1f2937;
 		font-size: 1.3rem;
 		margin: 0;
 		flex: 1;
@@ -379,7 +407,7 @@
 
 	.price {
 		background: #f1f8ff;
-		color: #3498db;
+		color: #3b82f6;
 		padding: 0.3rem 0.7rem;
 		border-radius: 6px;
 		font-weight: 600;
@@ -395,7 +423,7 @@
 
 	.reason {
 		background: #f8f9fa;
-		border-left: 3px solid #3498db;
+		border-left: 3px solid #3b82f6;
 		padding: 0.75rem;
 		border-radius: 6px;
 		margin-bottom: 1rem;
@@ -403,7 +431,7 @@
 	}
 
 	.reason strong {
-		color: #2c3e50;
+		color: #1f2937;
 		display: block;
 		margin-bottom: 0.5rem;
 	}
@@ -421,7 +449,7 @@
 		background: #27ae60;
 		color: white;
 		padding: 0.75rem 1.2rem;
-		border-radius: 8px;
+		border-radius: 1rem;
 		text-decoration: none;
 		text-align: center;
 		transition: all 0.3s;
@@ -433,13 +461,13 @@
 	.shop-btn:hover {
 		background: #229954;
 		transform: translateY(-2px);
-		box-shadow: 0 4px 8px rgba(39, 174, 96, 0.3);
+		box-shadow: 0 1px 3px rgba(39, 174, 96, 0.3);
 	}
 
 	.disclaimer {
 		background: #fff9e6;
 		border: 1px solid #f1c40f;
-		border-radius: 8px;
+		border-radius: 1rem;
 		padding: 1.5rem;
 		margin-top: 2rem;
 	}

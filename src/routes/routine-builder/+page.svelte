@@ -132,7 +132,7 @@
 
 <div class="container">
 	<header class="no-print">
-		<button class="back-button" onclick={() => goto('/')}>← Back</button>
+		<button class="back-button" onclick={() => goto('/')}>↩︎ Back</button>
 		<h1>Routine Builder</h1>
 		<div style="width: 100px;"></div>
 	</header>
@@ -293,6 +293,10 @@
 </div>
 
 <style>
+	:global(body) {
+		background: linear-gradient(135deg, #f0f9ff via #fdf2f8 to #fef3c7);
+	}
+
 	.container {
 		max-width: 1200px;
 		margin: 0 auto;
@@ -309,39 +313,40 @@
 
 	header h1 {
 		font-size: 2rem;
-		color: #2c3e50;
+		color: #1f2937;
 		flex: 1;
 		text-align: center;
 	}
 
 	.back-button {
-		background: #3498db;
-		color: white;
-		border: none;
+		background: transparent;
+		color: #374151;
+		border: 1px solid #d1d5db;
 		padding: 0.75rem 1.5rem;
-		border-radius: 8px;
+		border-radius: 9999px;
 		cursor: pointer;
 		font-size: 1rem;
-		transition: background 0.3s;
+		transition: all 0.3s;
 	}
 
 	.back-button:hover {
-		background: #2980b9;
+		background: rgba(255, 255, 255, 0.8);
+		border-color: #9ca3af;
 	}
 
 	.intro {
 		text-align: center;
 		font-size: 1.2rem;
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 2rem;
 	}
 
 	.routine-settings {
-		background: white;
+		background: rgba(255, 255, 255, 0.8);
 		padding: 1.5rem;
-		border-radius: 12px;
+		border-radius: 1rem;
 		margin-bottom: 2rem;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 	}
 
 	.setting {
@@ -355,7 +360,7 @@
 	.setting label {
 		display: block;
 		font-weight: 600;
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 0.5rem;
 	}
 
@@ -363,7 +368,7 @@
 		width: 100%;
 		padding: 0.75rem;
 		border: 2px solid #e0e0e0;
-		border-radius: 8px;
+		border-radius: 1rem;
 		font-size: 1rem;
 	}
 
@@ -378,38 +383,38 @@
 		min-width: 150px;
 		padding: 1rem;
 		border: 2px solid #e0e0e0;
-		background: white;
-		border-radius: 8px;
+		background: rgba(255, 255, 255, 0.8);
+		border-radius: 1rem;
 		cursor: pointer;
 		font-size: 1.1rem;
 		transition: all 0.3s;
 	}
 
 	.type-button:hover {
-		border-color: #3498db;
+		border-color: #3b82f6;
 	}
 
 	.type-button.active {
-		border-color: #3498db;
+		border-color: #3b82f6;
 		background: #e3f2fd;
 		font-weight: 600;
 	}
 
 	.steps-section {
-		background: white;
+		background: rgba(255, 255, 255, 0.8);
 		padding: 1.5rem;
-		border-radius: 12px;
+		border-radius: 1rem;
 		margin-bottom: 2rem;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 	}
 
 	.steps-section h2 {
 		margin-top: 0;
-		color: #2c3e50;
+		color: #1f2937;
 	}
 
 	.helper-text {
-		color: #7f8c8d;
+		color: #6b7280;
 		margin-bottom: 1rem;
 	}
 
@@ -421,9 +426,9 @@
 	}
 
 	.step-card {
-		background: white;
+		background: rgba(255, 255, 255, 0.8);
 		border: 2px solid #e0e0e0;
-		border-radius: 8px;
+		border-radius: 1rem;
 		padding: 1rem;
 		cursor: pointer;
 		transition: all 0.3s;
@@ -435,7 +440,7 @@
 	}
 
 	.step-card:hover {
-		border-color: #3498db;
+		border-color: #3b82f6;
 		transform: translateY(-2px);
 	}
 
@@ -450,7 +455,7 @@
 
 	.step-name {
 		font-size: 0.9rem;
-		color: #2c3e50;
+		color: #1f2937;
 		text-align: center;
 		word-wrap: break-word;
 		overflow-wrap: break-word;
@@ -479,7 +484,7 @@
 
 	.custom-step h3 {
 		margin-top: 0;
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 1rem;
 	}
 
@@ -492,7 +497,7 @@
 		flex: 1;
 		padding: 0.75rem;
 		border: 2px solid #e0e0e0;
-		border-radius: 8px;
+		border-radius: 1rem;
 		font-size: 1rem;
 	}
 
@@ -501,7 +506,7 @@
 		background: #27ae60;
 		color: white;
 		border: none;
-		border-radius: 8px;
+		border-radius: 1rem;
 		cursor: pointer;
 		font-weight: 600;
 		transition: background 0.3s;
@@ -512,11 +517,11 @@
 	}
 
 	.routine-preview {
-		background: white;
+		background: rgba(255, 255, 255, 0.8);
 		padding: 2rem;
-		border-radius: 12px;
+		border-radius: 1rem;
 		margin-bottom: 2rem;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 	}
 
 	.preview-header {
@@ -530,7 +535,7 @@
 
 	.preview-header h2 {
 		margin: 0;
-		color: #2c3e50;
+		color: #1f2937;
 	}
 
 	.preview-actions {
@@ -550,12 +555,12 @@
 	}
 
 	.preview-button {
-		background: #3498db;
+		background: #3b82f6;
 		color: white;
 	}
 
 	.preview-button:hover {
-		background: #2980b9;
+		background: #2563eb;
 	}
 
 	.print-button {
@@ -578,7 +583,7 @@
 
 	.routine-title {
 		text-align: center;
-		color: #2c3e50;
+		color: #1f2937;
 		font-size: 2.5rem;
 		margin-bottom: 2rem;
 	}
@@ -595,18 +600,18 @@
 		gap: 1rem;
 		padding: 1rem;
 		background: #f8f9fa;
-		border-radius: 8px;
+		border-radius: 1rem;
 		border: 2px solid #e0e0e0;
 	}
 
 	.routine-display.preview-mode .routine-step {
 		padding: 1.5rem;
-		background: white;
-		border: 3px solid #3498db;
+		background: rgba(255, 255, 255, 0.8);
+		border: 3px solid #3b82f6;
 	}
 
 	.step-number {
-		background: #3498db;
+		background: #3b82f6;
 		color: white;
 		width: 40px;
 		height: 40px;
@@ -642,7 +647,7 @@
 
 	.step-name-large {
 		font-size: 1.3rem;
-		color: #2c3e50;
+		color: #1f2937;
 		font-weight: 500;
 		word-wrap: break-word;
 		overflow-wrap: break-word;
@@ -674,7 +679,7 @@
 	}
 
 	.control-btn:hover:not(:disabled) {
-		background: #7f8c8d;
+		background: #6b7280;
 	}
 
 	.control-btn:disabled {
@@ -693,23 +698,23 @@
 	.empty-state {
 		text-align: center;
 		padding: 3rem;
-		color: #7f8c8d;
+		color: #6b7280;
 		font-size: 1.3rem;
-		background: white;
-		border-radius: 12px;
+		background: rgba(255, 255, 255, 0.8);
+		border-radius: 1rem;
 		margin-bottom: 2rem;
 	}
 
 	.tips-box {
 		background: #e8f4f8;
 		padding: 1.5rem;
-		border-radius: 12px;
-		border-left: 4px solid #3498db;
+		border-radius: 1rem;
+		border-left: 4px solid #3b82f6;
 	}
 
 	.tips-box h3 {
 		margin-top: 0;
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 1rem;
 	}
 
@@ -719,7 +724,7 @@
 	}
 
 	.tips-box li {
-		color: #2c3e50;
+		color: #1f2937;
 		line-height: 1.8;
 		margin-bottom: 0.5rem;
 	}
@@ -736,8 +741,8 @@
 		.routine-step {
 			page-break-inside: avoid;
 			padding: 1.5rem;
-			background: white;
-			border: 3px solid #3498db;
+			background: rgba(255, 255, 255, 0.8);
+			border: 3px solid #3b82f6;
 		}
 
 		.step-number {

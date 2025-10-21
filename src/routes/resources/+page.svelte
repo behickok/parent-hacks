@@ -13,7 +13,8 @@
 					title: 'Sleeping Through the Night',
 					source: 'KellyMom',
 					url: 'https://kellymom.com/parenting/nighttime/sleep/',
-					description: 'Understanding infant sleep patterns and realistic expectations for different ages.'
+					description:
+						'Understanding infant sleep patterns and realistic expectations for different ages.'
 				},
 				{
 					title: 'The Practical Magic of Daily Routines',
@@ -75,7 +76,8 @@
 					title: 'CDC Developmental Milestones',
 					source: 'CDC',
 					url: 'https://www.cdc.gov/act-early/milestones/index.html',
-					description: 'Track your child\'s development from birth to 5 years with free milestone tracker.'
+					description:
+						"Track your child's development from birth to 5 years with free milestone tracker."
 				},
 				{
 					title: 'Play and Learning Go Together',
@@ -131,13 +133,14 @@
 		regulation: {
 			title: 'Emotional Regulation',
 			icon: '🧘',
-			color: '#3498db',
+			color: '#3b82f6',
 			articles: [
 				{
 					title: 'Circle of Security',
 					source: 'Circle of Security International',
 					url: 'https://www.circleofsecurityinternational.com/',
-					description: 'How parents help children learn to regulate emotions through secure relationships.'
+					description:
+						'How parents help children learn to regulate emotions through secure relationships.'
 				},
 				{
 					title: 'Calming Strategies for Kids',
@@ -199,7 +202,7 @@
 
 <div class="container">
 	<header>
-		<button class="back-button" onclick={() => goto('/')}>← Back</button>
+		<button class="back-button" onclick={() => goto('/')}>↩︎ Back</button>
 		<h1>Resources</h1>
 		<div style="width: 100px;"></div>
 	</header>
@@ -257,13 +260,17 @@
 		</div>
 
 		<div class="disclaimer">
-			<strong>Note:</strong> These resources are provided for educational purposes. Always consult
-			with your pediatrician or a qualified professional for specific concerns about your child.
+			<strong>Note:</strong> These resources are provided for educational purposes. Always consult with
+			your pediatrician or a qualified professional for specific concerns about your child.
 		</div>
 	{/if}
 </div>
 
 <style>
+	:global(body) {
+		background: linear-gradient(135deg, #f0f9ff via #fdf2f8 to #fef3c7);
+	}
+
 	.container {
 		max-width: 1000px;
 		margin: 0 auto;
@@ -280,32 +287,33 @@
 
 	header h1 {
 		font-size: 2rem;
-		color: #2c3e50;
+		color: #1f2937;
 		flex: 1;
 		text-align: center;
 	}
 
 	.back-button {
-		background: #3498db;
-		color: white;
-		border: none;
+		background: transparent;
+		color: #374151;
+		border: 1px solid #d1d5db;
 		padding: 0.75rem 1.5rem;
-		border-radius: 8px;
+		border-radius: 9999px;
 		cursor: pointer;
 		font-size: 1rem;
-		transition: background 0.3s;
+		transition: all 0.3s;
 	}
 
 	.back-button:hover {
-		background: #2980b9;
+		background: rgba(255, 255, 255, 0.8);
+		border-color: #9ca3af;
 	}
 
 	.intro {
 		background: #e8f4f8;
 		padding: 1.5rem;
-		border-radius: 8px;
+		border-radius: 1rem;
 		margin-bottom: 2rem;
-		color: #2c3e50;
+		color: #1f2937;
 		line-height: 1.6;
 		text-align: center;
 	}
@@ -317,19 +325,19 @@
 	}
 
 	.category-card {
-		background: white;
+		background: rgba(255, 255, 255, 0.8);
 		border: 3px solid;
-		border-radius: 12px;
+		border-radius: 1rem;
 		padding: 2rem;
 		text-align: center;
 		cursor: pointer;
 		transition: all 0.3s;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 	}
 
 	.category-card:hover {
 		transform: translateY(-4px);
-		box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 	}
 
 	.category-icon {
@@ -339,12 +347,12 @@
 
 	.category-card h2 {
 		font-size: 1.3rem;
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 0.5rem;
 	}
 
 	.category-card p {
-		color: #7f8c8d;
+		color: #6b7280;
 		font-size: 0.9rem;
 	}
 
@@ -358,7 +366,7 @@
 		padding: 0.5rem 1rem;
 		border-radius: 6px;
 		cursor: pointer;
-		color: #2c3e50;
+		color: #1f2937;
 		font-size: 0.95rem;
 		transition: background 0.3s;
 	}
@@ -387,16 +395,16 @@
 	}
 
 	.article-card {
-		background: white;
+		background: rgba(255, 255, 255, 0.8);
 		border: 2px solid #e0e0e0;
-		border-radius: 12px;
+		border-radius: 1rem;
 		padding: 1.5rem;
 		transition: all 0.3s;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 	}
 
 	.article-card:hover {
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 		transform: translateY(-2px);
 	}
 
@@ -411,7 +419,7 @@
 
 	.article-card h3 {
 		font-size: 1.3rem;
-		color: #2c3e50;
+		color: #1f2937;
 		margin: 0;
 		flex: 1;
 		word-wrap: break-word;
@@ -420,16 +428,16 @@
 
 	.source {
 		background: #ecf0f1;
-		color: #2c3e50;
+		color: #1f2937;
 		padding: 0.25rem 0.75rem;
-		border-radius: 12px;
+		border-radius: 1rem;
 		font-size: 0.85rem;
 		font-weight: 600;
 		white-space: nowrap;
 	}
 
 	.description {
-		color: #7f8c8d;
+		color: #6b7280;
 		line-height: 1.6;
 		margin-bottom: 1rem;
 	}
@@ -438,7 +446,7 @@
 		display: inline-block;
 		color: white;
 		padding: 0.75rem 1.5rem;
-		border-radius: 8px;
+		border-radius: 1rem;
 		text-decoration: none;
 		font-weight: 600;
 		transition: all 0.3s;
@@ -446,15 +454,15 @@
 
 	.read-more:hover {
 		transform: translateX(4px);
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 	}
 
 	.disclaimer {
 		background: #fff3cd;
 		border-left: 4px solid #f39c12;
 		padding: 1rem;
-		border-radius: 8px;
-		color: #2c3e50;
+		border-radius: 1rem;
+		color: #1f2937;
 		line-height: 1.6;
 		font-size: 0.95rem;
 	}

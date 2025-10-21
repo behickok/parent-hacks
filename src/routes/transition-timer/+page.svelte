@@ -75,7 +75,7 @@
 		hasCompleted = false;
 		isRunning = true;
 		if (musicEnabled && audioElement) {
-			audioElement.play().catch(err => console.error('Audio play failed:', err));
+			audioElement.play().catch((err) => console.error('Audio play failed:', err));
 		}
 	}
 
@@ -132,7 +132,7 @@
 
 <div class="container">
 	<header>
-		<button class="back-button" onclick={() => goto('/')}>← Back</button>
+		<button class="back-button" onclick={() => goto('/')}>↩︎ Back</button>
 		<h1>Transition Timer</h1>
 		<div style="width: 100px;"></div>
 	</header>
@@ -174,33 +174,19 @@
 
 		<div class="setting">
 			<label class="checkbox-label">
-				<input
-					type="checkbox"
-					bind:checked={musicEnabled}
-				/>
+				<input type="checkbox" bind:checked={musicEnabled} />
 				Play music with timer
 			</label>
 		</div>
 	</div>
 
-	<audio
-		bind:this={audioElement}
-		src={transitions[transitionType].audioFile}
-		loop
-	></audio>
+	<audio bind:this={audioElement} src={transitions[transitionType].audioFile} loop></audio>
 
 	<div class="timer-display" style="border-color: {getTimerColor()}">
 		<div class="timer-visual">
 			<svg viewBox="0 0 200 200" class="timer-circle">
 				<!-- Background circle -->
-				<circle
-					cx="100"
-					cy="100"
-					r="80"
-					fill="none"
-					stroke="#e0e0e0"
-					stroke-width="20"
-				/>
+				<circle cx="100" cy="100" r="80" fill="none" stroke="#e0e0e0" stroke-width="20" />
 
 				<!-- Progress circle -->
 				<circle
@@ -211,11 +197,9 @@
 					stroke={getTimerColor()}
 					stroke-width="20"
 					stroke-dasharray={2 * Math.PI * 80}
-					stroke-dashoffset={
-						remainingSeconds > 0
-							? 2 * Math.PI * 80 * (1 - remainingSeconds / (duration * 60))
-							: 0
-					}
+					stroke-dashoffset={remainingSeconds > 0
+						? 2 * Math.PI * 80 * (1 - remainingSeconds / (duration * 60))
+						: 0}
 					transform="rotate(-90 100 100)"
 					style="transition: stroke 0.3s ease;"
 				/>
@@ -276,6 +260,10 @@
 </div>
 
 <style>
+	:global(body) {
+		background: linear-gradient(135deg, #f0f9ff via #fdf2f8 to #fef3c7);
+	}
+
 	.container {
 		max-width: 900px;
 		margin: 0 auto;
@@ -292,45 +280,46 @@
 
 	header h1 {
 		font-size: 2rem;
-		color: #2c3e50;
+		color: #1f2937;
 		flex: 1;
 		text-align: center;
 	}
 
 	.back-button {
-		background: #3498db;
-		color: white;
-		border: none;
+		background: transparent;
+		color: #374151;
+		border: 1px solid #d1d5db;
 		padding: 0.75rem 1.5rem;
-		border-radius: 8px;
+		border-radius: 9999px;
 		cursor: pointer;
 		font-size: 1rem;
-		transition: background 0.3s;
+		transition: all 0.3s;
 	}
 
 	.back-button:hover {
-		background: #2980b9;
+		background: rgba(255, 255, 255, 0.8);
+		border-color: #9ca3af;
 	}
 
 	.intro {
 		text-align: center;
 		font-size: 1.2rem;
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 2rem;
 		line-height: 1.6;
 	}
 
 	.transition-selector {
-		background: white;
+		background: rgba(255, 255, 255, 0.8);
 		padding: 1.5rem;
-		border-radius: 12px;
+		border-radius: 1rem;
 		margin-bottom: 2rem;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 	}
 
 	.transition-selector h2 {
 		margin-top: 0;
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 1rem;
 	}
 
@@ -341,9 +330,9 @@
 	}
 
 	.transition-card {
-		background: white;
+		background: rgba(255, 255, 255, 0.8);
 		border: 3px solid;
-		border-radius: 12px;
+		border-radius: 1rem;
 		padding: 1.5rem;
 		cursor: pointer;
 		transition: all 0.3s;
@@ -352,11 +341,11 @@
 
 	.transition-card:hover {
 		transform: translateY(-2px);
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 	}
 
 	.transition-card.active {
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 	}
 
 	.trans-icon {
@@ -365,17 +354,17 @@
 	}
 
 	.trans-name {
-		color: #2c3e50;
+		color: #1f2937;
 		font-weight: 600;
 		font-size: 0.95rem;
 	}
 
 	.timer-settings {
-		background: white;
+		background: rgba(255, 255, 255, 0.8);
 		padding: 1.5rem;
-		border-radius: 12px;
+		border-radius: 1rem;
 		margin-bottom: 2rem;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 	}
 
 	.setting {
@@ -389,7 +378,7 @@
 	.setting label {
 		display: block;
 		font-weight: 600;
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 0.5rem;
 	}
 
@@ -416,11 +405,11 @@
 	}
 
 	.timer-display {
-		background: white;
+		background: rgba(255, 255, 255, 0.8);
 		padding: 2rem;
-		border-radius: 12px;
+		border-radius: 1rem;
 		margin-bottom: 2rem;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 		border: 3px solid;
 	}
 
@@ -455,7 +444,7 @@
 	.control-button {
 		padding: 1rem 2rem;
 		border: none;
-		border-radius: 8px;
+		border-radius: 1rem;
 		cursor: pointer;
 		font-size: 1.1rem;
 		font-weight: 600;
@@ -494,7 +483,7 @@
 
 	.completion-message {
 		padding: 2rem;
-		border-radius: 12px;
+		border-radius: 1rem;
 		text-align: center;
 		color: white;
 		margin-bottom: 2rem;
@@ -511,16 +500,16 @@
 	}
 
 	.tips-box {
-		background: #e8f4f8;
+		background: rgba(255, 255, 255, 0.8);
 		padding: 1.5rem;
-		border-radius: 12px;
-		border-left: 4px solid #3498db;
+		border-radius: 1rem;
+		border-left: 4px solid #3b82f6;
 		margin-bottom: 1.5rem;
 	}
 
 	.tips-box h3 {
 		margin-top: 0;
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 1rem;
 	}
 
@@ -530,7 +519,7 @@
 	}
 
 	.tips-box li {
-		color: #2c3e50;
+		color: #1f2937;
 		line-height: 1.8;
 		margin-bottom: 0.5rem;
 	}

@@ -16,7 +16,7 @@
 						'Stay calm and use a gentle, quiet voice',
 						'Be consistent with the routine every night',
 						'Offer a lovey or comfort item',
-						'Consider a night light if they\'re afraid of the dark'
+						"Consider a night light if they're afraid of the dark"
 					]
 				},
 				{
@@ -88,7 +88,7 @@
 					script: `"You both want the [toy]. That's hard! [Child 1], you can have it for 3 more minutes, then it's [Child 2]'s turn. Let's set a timer together so it's fair. [Child 2], while you're waiting, would you like to [alternative activity]? I'll make sure you both get a turn."`,
 					tips: [
 						'Use a visual timer they can see',
-						'Acknowledge both children\'s feelings',
+						"Acknowledge both children's feelings",
 						'Offer an alternative activity for the waiting child',
 						'Praise turn-taking when it happens',
 						'Stay neutral and calm'
@@ -98,7 +98,7 @@
 					name: 'Refusing to share',
 					script: `"I know you're playing with that and don't want to share right now. That's okay - you can finish your turn. When you're done, it will be [other child]'s turn. [Other child], I know waiting is hard. Let's find something else fun to play with while [child] finishes."`,
 					tips: [
-						'Respect that they don\'t have to share everything',
+						"Respect that they don't have to share everything",
 						'Teach that turns eventually end',
 						'Set clear expectations before playdates',
 						'Allow them to put away special toys before friends come',
@@ -130,7 +130,7 @@
 						'Move to a quieter space if possible',
 						'Ignore stares from others',
 						'Keep them safe but give space if they need it',
-						'Don\'t try to reason during the peak of the tantrum',
+						"Don't try to reason during the peak of the tantrum",
 						'Talk about it later when everyone is calm'
 					]
 				},
@@ -138,7 +138,7 @@
 					name: 'Screaming and yelling',
 					script: `"I hear you're very upset. Screaming hurts my ears. When you're ready to use your normal voice, I'm ready to listen. I'll be right here." [Then give them space while staying nearby]`,
 					tips: [
-						'Don\'t yell back',
+						"Don't yell back",
 						'Wait for them to calm down',
 						'Offer comfort if they want it',
 						'Set a boundary about screaming',
@@ -146,7 +146,7 @@
 					]
 				},
 				{
-					name: 'Won\'t calm down',
+					name: "Won't calm down",
 					script: `"You're having very big feelings right now. Your body needs help calming down. Let's try [deep breaths/counting/getting a drink of water/squeezing hands]. I'm here to help you. You're safe."`,
 					tips: [
 						'Co-regulate with them',
@@ -169,7 +169,7 @@
 						'Give warnings: 10 minutes, 5 minutes, 1 minute',
 						'Acknowledge their feelings',
 						'Offer a choice of last activity',
-						'Preview what\'s coming next',
+						"Preview what's coming next",
 						'Stay firm but empathetic',
 						'Bring a comfort item for the car'
 					]
@@ -261,7 +261,7 @@
 
 <div class="container">
 	<header>
-		<button class="back-button" onclick={() => goto('/')}>← Back</button>
+		<button class="back-button" onclick={() => goto('/')}>↩︎ Back</button>
 		<h1>Script Library</h1>
 		<div style="width: 100px;"></div>
 	</header>
@@ -339,6 +339,10 @@
 </div>
 
 <style>
+	:global(body) {
+		background: linear-gradient(135deg, #f0f9ff via #fdf2f8 to #fef3c7);
+	}
+
 	.container {
 		max-width: 1000px;
 		margin: 0 auto;
@@ -355,32 +359,33 @@
 
 	header h1 {
 		font-size: 2rem;
-		color: #2c3e50;
+		color: #1f2937;
 		flex: 1;
 		text-align: center;
 	}
 
 	.back-button {
-		background: #3498db;
-		color: white;
-		border: none;
+		background: transparent;
+		color: #374151;
+		border: 1px solid #d1d5db;
 		padding: 0.75rem 1.5rem;
-		border-radius: 8px;
+		border-radius: 9999px;
 		cursor: pointer;
 		font-size: 1rem;
-		transition: background 0.3s;
+		transition: all 0.3s;
 	}
 
 	.back-button:hover {
-		background: #2980b9;
+		background: rgba(255, 255, 255, 0.8);
+		border-color: #9ca3af;
 	}
 
 	.intro {
 		background: #e8f4f8;
 		padding: 1.5rem;
-		border-radius: 8px;
+		border-radius: 1rem;
 		margin-bottom: 2rem;
-		color: #2c3e50;
+		color: #1f2937;
 		line-height: 1.6;
 	}
 
@@ -391,20 +396,20 @@
 	}
 
 	.category-card {
-		background: white;
+		background: rgba(255, 255, 255, 0.8);
 		border: 2px solid #e0e0e0;
-		border-radius: 12px;
+		border-radius: 1rem;
 		padding: 2rem;
 		text-align: center;
 		cursor: pointer;
 		transition: all 0.3s;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 	}
 
 	.category-card:hover {
 		transform: translateY(-4px);
 		box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-		border-color: #3498db;
+		border-color: #3b82f6;
 	}
 
 	.category-icon {
@@ -414,12 +419,12 @@
 
 	.category-card h2 {
 		font-size: 1.3rem;
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 0.5rem;
 	}
 
 	.category-card p {
-		color: #7f8c8d;
+		color: #6b7280;
 		font-size: 0.9rem;
 	}
 
@@ -433,7 +438,7 @@
 		padding: 0.5rem 1rem;
 		border-radius: 6px;
 		cursor: pointer;
-		color: #2c3e50;
+		color: #1f2937;
 		font-size: 0.95rem;
 		transition: background 0.3s;
 	}
@@ -447,7 +452,7 @@
 		align-items: center;
 		gap: 1rem;
 		font-size: 2rem;
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 2rem;
 	}
 
@@ -462,9 +467,9 @@
 	}
 
 	.situation-card {
-		background: white;
+		background: rgba(255, 255, 255, 0.8);
 		border: 2px solid #e0e0e0;
-		border-radius: 8px;
+		border-radius: 1rem;
 		padding: 1.5rem;
 		cursor: pointer;
 		transition: all 0.3s;
@@ -475,45 +480,45 @@
 	}
 
 	.situation-card:hover {
-		border-color: #3498db;
+		border-color: #3b82f6;
 		transform: translateX(4px);
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 	}
 
 	.situation-card h3 {
 		font-size: 1.2rem;
-		color: #2c3e50;
+		color: #1f2937;
 		margin: 0;
 	}
 
 	.situation-card .arrow {
 		font-size: 1.5rem;
-		color: #3498db;
+		color: #3b82f6;
 	}
 
 	.script-detail {
-		background: white;
-		border-radius: 12px;
+		background: rgba(255, 255, 255, 0.8);
+		border-radius: 1rem;
 		padding: 2rem;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 	}
 
 	.script-detail h2 {
-		color: #2c3e50;
+		color: #1f2937;
 		font-size: 2rem;
 		margin-bottom: 1.5rem;
 	}
 
 	.script-box {
 		background: #e8f4f8;
-		border-left: 4px solid #3498db;
+		border-left: 4px solid #3b82f6;
 		padding: 1.5rem;
-		border-radius: 8px;
+		border-radius: 1rem;
 		margin-bottom: 2rem;
 	}
 
 	.script-box h3 {
-		color: #2c3e50;
+		color: #1f2937;
 		margin-top: 0;
 		margin-bottom: 1rem;
 	}
@@ -521,7 +526,7 @@
 	.script-text {
 		font-size: 1.1rem;
 		line-height: 1.8;
-		color: #2c3e50;
+		color: #1f2937;
 		font-style: italic;
 		margin-bottom: 1rem;
 		word-wrap: break-word;
@@ -529,7 +534,7 @@
 	}
 
 	.copy-button {
-		background: #3498db;
+		background: #3b82f6;
 		color: white;
 		border: none;
 		padding: 0.5rem 1rem;
@@ -540,19 +545,19 @@
 	}
 
 	.copy-button:hover {
-		background: #2980b9;
+		background: #2563eb;
 	}
 
 	.tips-box {
 		background: #fff9e6;
 		border-left: 4px solid #f39c12;
 		padding: 1.5rem;
-		border-radius: 8px;
+		border-radius: 1rem;
 		margin-bottom: 1.5rem;
 	}
 
 	.tips-box h3 {
-		color: #2c3e50;
+		color: #1f2937;
 		margin-top: 0;
 		margin-bottom: 1rem;
 	}
@@ -563,7 +568,7 @@
 	}
 
 	.tips-box li {
-		color: #2c3e50;
+		color: #1f2937;
 		line-height: 1.8;
 		margin-bottom: 0.5rem;
 	}
@@ -572,8 +577,8 @@
 		background: #e8f8f5;
 		border-left: 4px solid #27ae60;
 		padding: 1rem;
-		border-radius: 8px;
-		color: #2c3e50;
+		border-radius: 1rem;
+		color: #1f2937;
 		line-height: 1.6;
 	}
 

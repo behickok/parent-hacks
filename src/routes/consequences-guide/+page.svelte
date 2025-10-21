@@ -8,30 +8,34 @@
 		daily: {
 			title: 'Daily Routines',
 			icon: '🏠',
-			color: '#3498db',
+			color: '#3b82f6',
 			situations: [
 				{
 					behavior: 'Refusing to get dressed in the morning',
 					natural: {
 						consequence: 'They go to school/daycare in pajamas (if safe and weather-appropriate)',
-						explanation: 'The child experiences the natural embarrassment or consequence of their choice.',
+						explanation:
+							'The child experiences the natural embarrassment or consequence of their choice.',
 						when: 'Safe environment, not too cold/hot, not a special event day'
 					},
 					logical: {
-						consequence: 'Limited clothing choices tomorrow - you pick two options, they choose one',
-						explanation: 'Related to the problem but parent-imposed. Teaches decision-making within limits.',
-						when: 'Natural consequence isn\'t safe or appropriate'
+						consequence:
+							'Limited clothing choices tomorrow - you pick two options, they choose one',
+						explanation:
+							'Related to the problem but parent-imposed. Teaches decision-making within limits.',
+						when: "Natural consequence isn't safe or appropriate"
 					},
 					avoid: [
 						'Yelling or power struggles',
 						'Letting them be late repeatedly',
-						'Dressing them when they\'re capable',
+						"Dressing them when they're capable",
 						'Long lectures about responsibility'
 					],
-					script: '"You\'re choosing not to get dressed. That means you\'ll wear pajamas today. Tomorrow, I\'ll pick out two outfits and you can choose one."'
+					script:
+						"\"You're choosing not to get dressed. That means you'll wear pajamas today. Tomorrow, I'll pick out two outfits and you can choose one.\""
 				},
 				{
-					behavior: 'Won\'t eat dinner',
+					behavior: "Won't eat dinner",
 					natural: {
 						consequence: 'They get hungry before next meal/snack time',
 						explanation: 'Hunger is the natural consequence of not eating.',
@@ -39,7 +43,7 @@
 					},
 					logical: {
 						consequence: 'No dessert or special snacks; kitchen closes after dinner time',
-						explanation: 'Logically related - if you don\'t eat meals, you don\'t get treats.',
+						explanation: "Logically related - if you don't eat meals, you don't get treats.",
 						when: 'Always appropriate for healthy children'
 					},
 					avoid: [
@@ -48,18 +52,20 @@
 						'Using food as punishment or reward',
 						'Late-night snacks to compensate'
 					],
-					script: '"I can see you\'re not hungry for dinner. Kitchen closes in 10 minutes. Breakfast is at [time] tomorrow morning."'
+					script:
+						'"I can see you\'re not hungry for dinner. Kitchen closes in 10 minutes. Breakfast is at [time] tomorrow morning."'
 				},
 				{
 					behavior: 'Dawdling and making everyone late',
 					natural: {
 						consequence: 'Miss the fun part of the activity; arrive after friends',
 						explanation: 'They experience the disappointment of missing out.',
-						when: 'It won\'t cause serious problems (work, appointments)'
+						when: "It won't cause serious problems (work, appointments)"
 					},
 					logical: {
-						consequence: 'Lose privilege of the activity next time; earlier bedtime to wake up on time',
-						explanation: 'Related to time management and respecting others\' schedules.',
+						consequence:
+							'Lose privilege of the activity next time; earlier bedtime to wake up on time',
+						explanation: "Related to time management and respecting others' schedules.",
 						when: 'Being late affects others significantly'
 					},
 					avoid: [
@@ -68,7 +74,8 @@
 						'Blaming the child publicly',
 						'Skipping consequences out of guilt'
 					],
-					script: '"We needed to leave at 3:00 and it\'s 3:15. We\'ll go now, but you\'ll miss [first part]. Next time, you can be ready on time or we won\'t go."'
+					script:
+						"\"We needed to leave at 3:00 and it's 3:15. We'll go now, but you'll miss [first part]. Next time, you can be ready on time or we won't go.\""
 				}
 			]
 		},
@@ -80,7 +87,7 @@
 				{
 					behavior: 'Not cleaning up toys',
 					natural: {
-						consequence: 'Can\'t find favorite toys; stepping on toys hurts; room is messy',
+						consequence: "Can't find favorite toys; stepping on toys hurts; room is messy",
 						explanation: 'They live with the mess they created.',
 						when: 'Mess is contained to their space, not a safety hazard'
 					},
@@ -95,13 +102,14 @@
 						'Throwing toys away in anger',
 						'Expecting perfection'
 					],
-					script: '"Toys that aren\'t cleaned up by bedtime will go in the timeout bin for tomorrow. You can earn them back by cleaning up your other toys."'
+					script:
+						'"Toys that aren\'t cleaned up by bedtime will go in the timeout bin for tomorrow. You can earn them back by cleaning up your other toys."'
 				},
 				{
 					behavior: 'Breaking toys due to rough play',
 					natural: {
-						consequence: 'Toy is broken and can\'t be played with anymore',
-						explanation: 'They can\'t use something they broke.',
+						consequence: "Toy is broken and can't be played with anymore",
+						explanation: "They can't use something they broke.",
 						when: 'Always - this is a perfect natural consequence'
 					},
 					logical: {
@@ -115,7 +123,8 @@
 						'Harsh punishment for accidents',
 						'Saying "I told you so"'
 					],
-					script: '"Oh no, your toy broke because you [specific action]. That\'s sad. Toys don\'t work when they\'re broken. We won\'t be replacing it right now."'
+					script:
+						"\"Oh no, your toy broke because you [specific action]. That's sad. Toys don't work when they're broken. We won't be replacing it right now.\""
 				},
 				{
 					behavior: 'Fighting over toys with siblings',
@@ -126,7 +135,8 @@
 					},
 					logical: {
 						consequence: 'Toy is removed for remainder of day; both children lose access',
-						explanation: 'Related to sharing and taking turns - can\'t have it if you fight over it.',
+						explanation:
+							"Related to sharing and taking turns - can't have it if you fight over it.",
 						when: 'Repeated fighting; safety concerns'
 					},
 					avoid: [
@@ -135,7 +145,8 @@
 						'Punishing only one child',
 						'Allowing fighting to continue'
 					],
-					script: '"You\'re both fighting over this toy. That tells me you\'re not ready to share it. The toy is going away for today. You can try again tomorrow."'
+					script:
+						'"You\'re both fighting over this toy. That tells me you\'re not ready to share it. The toy is going away for today. You can try again tomorrow."'
 				}
 			]
 		},
@@ -152,7 +163,8 @@
 						when: 'Behavior is disruptive but not dangerous'
 					},
 					logical: {
-						consequence: 'Don\'t bring them to that type of place for a set period; practice behavior at home first',
+						consequence:
+							"Don't bring them to that type of place for a set period; practice behavior at home first",
 						explanation: 'Related to public behavior - must demonstrate readiness.',
 						when: 'Pattern of public meltdowns; need to rebuild skills'
 					},
@@ -162,18 +174,20 @@
 						'Spanking or physical punishment',
 						'Extended public lectures'
 					],
-					script: '"I can see you\'re having trouble controlling your body/voice. We\'re leaving now. You can try again when you\'re ready to [expected behavior]."'
+					script:
+						"\"I can see you're having trouble controlling your body/voice. We're leaving now. You can try again when you're ready to [expected behavior].\""
 				},
 				{
 					behavior: 'Deliberately hurting siblings or pets',
 					natural: {
 						consequence: 'Sibling/pet avoids them; relationship is damaged',
 						explanation: 'Hurting others makes them not want to be near you.',
-						when: 'Supplement with logical consequences; natural isn\'t enough'
+						when: "Supplement with logical consequences; natural isn't enough"
 					},
 					logical: {
-						consequence: 'Immediate separation; lose privilege of playing together; must make amends',
-						explanation: 'Related to safety - can\'t be together if someone gets hurt.',
+						consequence:
+							'Immediate separation; lose privilege of playing together; must make amends',
+						explanation: "Related to safety - can't be together if someone gets hurt.",
 						when: 'Always - safety is non-negotiable'
 					},
 					avoid: [
@@ -182,12 +196,13 @@
 						'Forcing apologies without understanding',
 						'Hitting them to show hitting is wrong'
 					],
-					script: '"I won\'t let you hurt [sibling/pet]. Hurting is not okay. You need to sit here until you\'re calm. Then we\'ll talk about making it right."'
+					script:
+						"\"I won't let you hurt [sibling/pet]. Hurting is not okay. You need to sit here until you're calm. Then we'll talk about making it right.\""
 				},
 				{
 					behavior: 'Lying about something they did',
 					natural: {
-						consequence: 'Trust is damaged; people don\'t believe them',
+						consequence: "Trust is damaged; people don't believe them",
 						explanation: 'Lying breaks trust in relationships.',
 						when: 'Age-appropriate to understand trust; not too young'
 					},
@@ -202,7 +217,8 @@
 						'Not addressing it at all',
 						'Trapping them in lies'
 					],
-					script: '"That doesn\'t match what I know happened. When you tell me something that\'s not true, it makes it hard for me to trust you. I need you to tell me the truth now."'
+					script:
+						'"That doesn\'t match what I know happened. When you tell me something that\'s not true, it makes it hard for me to trust you. I need you to tell me the truth now."'
 				}
 			]
 		},
@@ -214,12 +230,13 @@
 				{
 					behavior: 'Forgetting homework/lunch/sports gear',
 					natural: {
-						consequence: 'Face consequences at school (missed recess, can\'t participate, etc.)',
-						explanation: 'They experience the school\'s response to being unprepared.',
+						consequence: "Face consequences at school (missed recess, can't participate, etc.)",
+						explanation: "They experience the school's response to being unprepared.",
 						when: 'Safe to do so; school has reasonable consequences; child is old enough (typically 7+)'
 					},
 					logical: {
-						consequence: 'Create checklist; lose screen time to practice packing; pack together until mastered',
+						consequence:
+							'Create checklist; lose screen time to practice packing; pack together until mastered',
 						explanation: 'Related to organization - need to build systems.',
 						when: 'Too young for full natural consequence; pattern of forgetting'
 					},
@@ -229,17 +246,19 @@
 						'Making excuses for them',
 						'Harsh punishment at home'
 					],
-					script: '"I see you forgot [item]. That\'s disappointing. You\'ll need to face the consequence at school. Let\'s make a checklist together so this doesn\'t happen again."'
+					script:
+						"\"I see you forgot [item]. That's disappointing. You'll need to face the consequence at school. Let's make a checklist together so this doesn't happen again.\""
 				},
 				{
 					behavior: 'Not taking care of pet',
 					natural: {
 						consequence: 'Pet is unhappy, smelly, or uncomfortable',
-						explanation: 'Neglect has visible impact on pet\'s wellbeing.',
-						when: 'NEVER for pet\'s basic needs - parent must step in'
+						explanation: "Neglect has visible impact on pet's wellbeing.",
+						when: "NEVER for pet's basic needs - parent must step in"
 					},
 					logical: {
-						consequence: 'Lose pet privileges; parent takes over care; no new pets/responsibilities',
+						consequence:
+							'Lose pet privileges; parent takes over care; no new pets/responsibilities',
 						explanation: 'Related to caring for living things - proves not ready.',
 						when: 'Always - pet welfare comes first'
 					},
@@ -249,17 +268,19 @@
 						'Taking over without discussion',
 						'Not giving chances to improve'
 					],
-					script: '"[Pet] needs to be fed by 6pm every day. It\'s 7pm and they haven\'t eaten. I\'ll feed them tonight. If this happens again, I\'ll take over pet care and you won\'t be ready for a new pet."'
+					script:
+						"\"[Pet] needs to be fed by 6pm every day. It's 7pm and they haven't eaten. I'll feed them tonight. If this happens again, I'll take over pet care and you won't be ready for a new pet.\""
 				},
 				{
 					behavior: 'Wasting/destroying supplies (markers, paper, etc.)',
 					natural: {
 						consequence: 'No more supplies to use for projects/art',
-						explanation: 'Running out means can\'t do the activity.',
-						when: 'Non-essential items; won\'t impact school work'
+						explanation: "Running out means can't do the activity.",
+						when: "Non-essential items; won't impact school work"
 					},
 					logical: {
-						consequence: 'Must earn money to replace; limited supplies given at a time; supervised use',
+						consequence:
+							'Must earn money to replace; limited supplies given at a time; supervised use',
 						explanation: 'Related to respecting resources - must prove responsibility.',
 						when: 'Expensive items; repeated wastefulness'
 					},
@@ -269,7 +290,8 @@
 						'Not teaching proper use',
 						'Disproportionate punishment'
 					],
-					script: '"You used up all the markers by [wasteful action]. Now there are no markers left. We\'ll get more when you can earn the money or in [timeframe]."'
+					script:
+						'"You used up all the markers by [wasteful action]. Now there are no markers left. We\'ll get more when you can earn the money or in [timeframe]."'
 				}
 			]
 		}
@@ -297,15 +319,15 @@
 
 <div class="container">
 	<header>
-		<button class="back-button" onclick={() => goto('/')}>← Back</button>
+		<button class="back-button" onclick={() => goto('/')}>↩︎ Back</button>
 		<h1>Consequences Guide</h1>
 		<div style="width: 100px;"></div>
 	</header>
 
 	<div class="intro">
 		<p>
-			Learn the difference between natural consequences, logical consequences, and punishment.
-			Find age-appropriate, effective responses to common behaviors.
+			Learn the difference between natural consequences, logical consequences, and punishment. Find
+			age-appropriate, effective responses to common behaviors.
 		</p>
 	</div>
 
@@ -336,7 +358,9 @@
 
 				<div class="type-card punishment">
 					<h3>❌ Punishment (Avoid)</h3>
-					<p>Consequences unrelated to behavior, often shame-based and punitive rather than teaching.</p>
+					<p>
+						Consequences unrelated to behavior, often shame-based and punitive rather than teaching.
+					</p>
 					<div class="example">
 						<strong>Example:</strong> Child won't share toy → Sent to room for an hour
 					</div>
@@ -362,10 +386,11 @@
 		</div>
 	{:else if !selectedScenario}
 		<div class="scenarios-section">
-			<button class="breadcrumb-button" onclick={reset}>← Back to Categories</button>
+			<button class="breadcrumb-button" onclick={reset}>↩︎ Back to Categories</button>
 
 			<h2 style="color: {scenarios[selectedCategory].color}">
-				{scenarios[selectedCategory].icon} {scenarios[selectedCategory].title}
+				{scenarios[selectedCategory].icon}
+				{scenarios[selectedCategory].title}
 			</h2>
 
 			<div class="scenarios-list">
@@ -380,7 +405,7 @@
 	{:else}
 		<div class="detail-section">
 			<button class="breadcrumb-button" onclick={() => (selectedScenario = null)}>
-				← Back to {scenarios[selectedCategory].title}
+				↩︎ Back to {scenarios[selectedCategory].title}
 			</button>
 
 			<div class="scenario-header">
@@ -459,6 +484,10 @@
 </div>
 
 <style>
+	:global(body) {
+		background: linear-gradient(135deg, #f0f9ff via #fdf2f8 to #fef3c7);
+	}
+
 	.container {
 		max-width: 1000px;
 		margin: 0 auto;
@@ -475,45 +504,46 @@
 
 	header h1 {
 		font-size: 2rem;
-		color: #2c3e50;
+		color: #1f2937;
 		flex: 1;
 		text-align: center;
 	}
 
 	.back-button {
-		background: #3498db;
-		color: white;
-		border: none;
+		background: transparent;
+		color: #374151;
+		border: 1px solid #d1d5db;
 		padding: 0.75rem 1.5rem;
-		border-radius: 8px;
+		border-radius: 9999px;
 		cursor: pointer;
 		font-size: 1rem;
-		transition: background 0.3s;
+		transition: all 0.3s;
 	}
 
 	.back-button:hover {
-		background: #2980b9;
+		background: rgba(255, 255, 255, 0.8);
+		border-color: #9ca3af;
 	}
 
 	.intro {
 		text-align: center;
 		font-size: 1.1rem;
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 2rem;
 		line-height: 1.6;
 	}
 
 	.explainer {
-		background: white;
+		background: rgba(255, 255, 255, 0.8);
 		padding: 2rem;
-		border-radius: 12px;
+		border-radius: 1rem;
 		margin-bottom: 2rem;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 	}
 
 	.explainer h2 {
 		margin-top: 0;
-		color: #2c3e50;
+		color: #1f2937;
 		text-align: center;
 		margin-bottom: 2rem;
 	}
@@ -526,7 +556,7 @@
 
 	.type-card {
 		padding: 1.5rem;
-		border-radius: 8px;
+		border-radius: 1rem;
 		border: 2px solid;
 	}
 
@@ -536,7 +566,7 @@
 	}
 
 	.type-card.logical {
-		border-color: #3498db;
+		border-color: #3b82f6;
 		background: #e3f2fd;
 	}
 
@@ -547,12 +577,12 @@
 
 	.type-card h3 {
 		margin-top: 0;
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 0.5rem;
 	}
 
 	.type-card p {
-		color: #2c3e50;
+		color: #1f2937;
 		line-height: 1.6;
 		margin-bottom: 1rem;
 	}
@@ -562,19 +592,19 @@
 		padding: 1rem;
 		border-radius: 6px;
 		font-size: 0.95rem;
-		color: #2c3e50;
+		color: #1f2937;
 	}
 
 	.categories {
-		background: white;
+		background: rgba(255, 255, 255, 0.8);
 		padding: 2rem;
-		border-radius: 12px;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		border-radius: 1rem;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 	}
 
 	.categories h2 {
 		margin-top: 0;
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 1.5rem;
 	}
 
@@ -585,9 +615,9 @@
 	}
 
 	.category-card {
-		background: white;
+		background: rgba(255, 255, 255, 0.8);
 		border: 3px solid;
-		border-radius: 12px;
+		border-radius: 1rem;
 		padding: 2rem;
 		cursor: pointer;
 		transition: all 0.3s;
@@ -596,7 +626,7 @@
 
 	.category-card:hover {
 		transform: translateY(-4px);
-		box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 	}
 
 	.category-icon {
@@ -606,13 +636,13 @@
 
 	.category-card h3 {
 		margin: 0 0 0.5rem 0;
-		color: #2c3e50;
+		color: #1f2937;
 		font-size: 1.2rem;
 	}
 
 	.category-card p {
 		margin: 0;
-		color: #7f8c8d;
+		color: #6b7280;
 		font-size: 0.9rem;
 	}
 
@@ -622,7 +652,7 @@
 		padding: 0.5rem 1rem;
 		border-radius: 6px;
 		cursor: pointer;
-		color: #2c3e50;
+		color: #1f2937;
 		font-size: 0.95rem;
 		transition: background 0.3s;
 		margin-bottom: 1.5rem;
@@ -639,9 +669,9 @@
 	}
 
 	.scenario-card {
-		background: white;
+		background: rgba(255, 255, 255, 0.8);
 		border: 2px solid #e0e0e0;
-		border-radius: 8px;
+		border-radius: 1rem;
 		padding: 1.5rem;
 		cursor: pointer;
 		transition: all 0.3s;
@@ -652,40 +682,40 @@
 	}
 
 	.scenario-card:hover {
-		border-color: #3498db;
+		border-color: #3b82f6;
 		transform: translateX(4px);
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 	}
 
 	.scenario-card h3 {
 		margin: 0;
-		color: #2c3e50;
+		color: #1f2937;
 		font-size: 1.1rem;
 	}
 
 	.arrow {
 		font-size: 1.5rem;
-		color: #3498db;
+		color: #3b82f6;
 	}
 
 	.scenario-header {
-		background: white;
+		background: rgba(255, 255, 255, 0.8);
 		padding: 2rem;
-		border-radius: 12px;
+		border-radius: 1rem;
 		margin-bottom: 2rem;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 	}
 
 	.scenario-header h1 {
 		margin: 0;
-		color: #2c3e50;
+		color: #1f2937;
 		font-size: 2rem;
 		text-align: center;
 	}
 
 	.consequence-option {
 		padding: 1.5rem;
-		border-radius: 12px;
+		border-radius: 1rem;
 		margin-bottom: 1.5rem;
 		border-left: 4px solid;
 	}
@@ -697,12 +727,12 @@
 
 	.consequence-option.logical {
 		background: #e3f2fd;
-		border-color: #3498db;
+		border-color: #3b82f6;
 	}
 
 	.consequence-option h3 {
 		margin-top: 0;
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 1rem;
 	}
 
@@ -715,14 +745,14 @@
 	}
 
 	.consequence-detail strong {
-		color: #2c3e50;
+		color: #1f2937;
 		display: block;
 		margin-bottom: 0.25rem;
 	}
 
 	.consequence-detail p {
 		margin: 0;
-		color: #2c3e50;
+		color: #1f2937;
 		line-height: 1.6;
 		word-wrap: break-word;
 		overflow-wrap: break-word;
@@ -732,20 +762,20 @@
 		background: #fff9e6;
 		border-left: 4px solid #f39c12;
 		padding: 1.5rem;
-		border-radius: 8px;
+		border-radius: 1rem;
 		margin-bottom: 1.5rem;
 	}
 
 	.script-box h3 {
 		margin-top: 0;
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 1rem;
 	}
 
 	.script-text {
 		font-size: 1.05rem;
 		line-height: 1.8;
-		color: #2c3e50;
+		color: #1f2937;
 		font-style: italic;
 		margin-bottom: 1rem;
 		word-wrap: break-word;
@@ -771,13 +801,13 @@
 		background: #ffebee;
 		border-left: 4px solid #e74c3c;
 		padding: 1.5rem;
-		border-radius: 8px;
+		border-radius: 1rem;
 		margin-bottom: 1.5rem;
 	}
 
 	.avoid-box h3 {
 		margin-top: 0;
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 1rem;
 	}
 
@@ -787,21 +817,21 @@
 	}
 
 	.avoid-box li {
-		color: #2c3e50;
+		color: #1f2937;
 		line-height: 1.8;
 		margin-bottom: 0.5rem;
 	}
 
 	.principles-box {
 		background: #e8f4f8;
-		border-left: 4px solid #3498db;
+		border-left: 4px solid #3b82f6;
 		padding: 1.5rem;
-		border-radius: 8px;
+		border-radius: 1rem;
 	}
 
 	.principles-box h3 {
 		margin-top: 0;
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 1rem;
 	}
 
@@ -811,7 +841,7 @@
 	}
 
 	.principles-box li {
-		color: #2c3e50;
+		color: #1f2937;
 		line-height: 1.8;
 		margin-bottom: 0.5rem;
 	}

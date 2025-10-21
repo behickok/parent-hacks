@@ -108,7 +108,7 @@
 
 <div class="container">
 	<header>
-		<button class="back-button" onclick={() => goto('/')}>← Back</button>
+		<button class="back-button" onclick={() => goto('/')}>↩︎ Back</button>
 		<h1>Visual Timer</h1>
 		<div style="width: 100px;"></div>
 	</header>
@@ -118,36 +118,43 @@
 			<div class="setup-panel">
 				<h2>Set Timer</h2>
 				<div class="time-input">
-					<input
-						type="number"
-						bind:value={inputMinutes}
-						min="1"
-						max="60"
-						placeholder="Minutes"
-					/>
+					<input type="number" bind:value={inputMinutes} min="1" max="60" placeholder="Minutes" />
 					<span>minutes</span>
 				</div>
 				<button class="set-button" onclick={setTimer}>Set Timer</button>
 
 				<div class="quick-buttons">
-					<button onclick={() => { inputMinutes = 2; setTimer(); }}>2 min</button>
-					<button onclick={() => { inputMinutes = 5; setTimer(); }}>5 min</button>
-					<button onclick={() => { inputMinutes = 10; setTimer(); }}>10 min</button>
-					<button onclick={() => { inputMinutes = 15; setTimer(); }}>15 min</button>
+					<button
+						onclick={() => {
+							inputMinutes = 2;
+							setTimer();
+						}}>2 min</button
+					>
+					<button
+						onclick={() => {
+							inputMinutes = 5;
+							setTimer();
+						}}>5 min</button
+					>
+					<button
+						onclick={() => {
+							inputMinutes = 10;
+							setTimer();
+						}}>10 min</button
+					>
+					<button
+						onclick={() => {
+							inputMinutes = 15;
+							setTimer();
+						}}>15 min</button
+					>
 				</div>
 			</div>
 		{:else}
 			<div class="timer-display">
 				<svg class="timer-circle" viewBox="0 0 200 200">
 					<!-- Background circle -->
-					<circle
-						cx="100"
-						cy="100"
-						r="90"
-						fill="none"
-						stroke="#e0e0e0"
-						stroke-width="20"
-					/>
+					<circle cx="100" cy="100" r="90" fill="none" stroke="#e0e0e0" stroke-width="20" />
 
 					<!-- Progress circle -->
 					<circle
@@ -221,11 +228,17 @@
 </div>
 
 <style>
+	:global(body) {
+		background: linear-gradient(135deg, #f0f9ff via #fdf2f8 to #fef3c7);
+		min-height: 100vh;
+	}
+
 	.container {
 		max-width: 800px;
 		margin: 0 auto;
 		padding: 2rem;
 		min-height: 100vh;
+		background: linear-gradient(135deg, #f0f9ff via #fdf2f8 to #fef3c7);
 	}
 
 	header {
@@ -237,37 +250,42 @@
 
 	header h1 {
 		font-size: 2rem;
-		color: #2c3e50;
+		color: #1f2937;
 		flex: 1;
 		text-align: center;
+		font-weight: 700;
 	}
 
 	.back-button {
-		background: #3498db;
-		color: white;
-		border: none;
-		padding: 0.75rem 1.5rem;
-		border-radius: 8px;
+		background: transparent;
+		color: #374151;
+		border: 1px solid #d1d5db;
+		padding: 0.5rem 1rem;
+		border-radius: 9999px;
 		cursor: pointer;
-		font-size: 1rem;
-		transition: background 0.3s;
+		font-size: 0.9rem;
+		transition: all 0.2s;
+		font-weight: 500;
 	}
 
 	.back-button:hover {
-		background: #2980b9;
+		background: #f3f4f6;
+		border-color: #9ca3af;
+		color: #1f2937;
 	}
 
 	.timer-container {
-		background: white;
-		border-radius: 12px;
+		background: rgba(255, 255, 255, 0.8);
+		border-radius: 1rem;
 		padding: 3rem;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 		text-align: center;
 	}
 
 	.setup-panel h2 {
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 2rem;
+		font-weight: 600;
 	}
 
 	.time-input {
@@ -289,21 +307,21 @@
 
 	.time-input input:focus {
 		outline: none;
-		border-color: #3498db;
+		border-color: #3b82f6;
 	}
 
 	.time-input span {
 		font-size: 1.5rem;
-		color: #7f8c8d;
+		color: #6b7280;
 	}
 
 	.set-button {
 		padding: 1rem 3rem;
 		font-size: 1.3rem;
-		background: #3498db;
+		background: #3b82f6;
 		color: white;
 		border: none;
-		border-radius: 8px;
+		border-radius: 9999px;
 		cursor: pointer;
 		transition: all 0.3s;
 		font-weight: 600;
@@ -311,7 +329,7 @@
 	}
 
 	.set-button:hover {
-		background: #2980b9;
+		background: #2563eb;
 		transform: translateY(-2px);
 	}
 
@@ -374,11 +392,11 @@
 		width: 30px;
 		height: 30px;
 		border-radius: 4px;
-		border: 2px solid #2c3e50;
+		border: 2px solid #1f2937;
 	}
 
 	.legend-item span {
-		color: #2c3e50;
+		color: #1f2937;
 		font-size: 0.9rem;
 	}
 

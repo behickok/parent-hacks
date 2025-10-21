@@ -35,7 +35,7 @@
 					title: '{child1} Had It First & Has Been Playing A While',
 					script: `"{child1}, you've been playing with the {item} for a while now. {child2} would like a turn. Let's set a timer for 2 more minutes, then it will be {child2}'s turn. {child2}, I know waiting is hard. While you wait, would you like to [suggest alternative activity]?"`,
 					tips: [
-						'Acknowledge both children\'s feelings',
+						"Acknowledge both children's feelings",
 						'Use a visual timer',
 						'Offer the waiting child an alternative',
 						'Follow through on the time limit'
@@ -45,7 +45,7 @@
 					title: '{child1} Just Started Playing',
 					script: `"{child1} just started playing with the {item}. {child2}, {child1} gets to finish their turn first. Let's set a timer for 5 minutes. Would you like to play with [similar toy] while you wait, or should we find something else fun?"`,
 					tips: [
-						'Protect the first child\'s right to play',
+						"Protect the first child's right to play",
 						'Give concrete wait time',
 						'Help waiting child find alternative',
 						'Praise patience when timer goes off'
@@ -55,7 +55,7 @@
 					title: '{child2} Had It First & Has Been Playing A While',
 					script: `"{child2}, you've been playing with the {item} for a while now. {child1} would like a turn. Let's set a timer for 2 more minutes, then it will be {child1}'s turn. {child1}, I know waiting is hard. While you wait, would you like to [suggest alternative activity]?"`,
 					tips: [
-						'Acknowledge both children\'s feelings',
+						"Acknowledge both children's feelings",
 						'Use a visual timer',
 						'Offer the waiting child an alternative',
 						'Follow through on the time limit'
@@ -65,7 +65,7 @@
 					title: '{child2} Just Started Playing',
 					script: `"{child2} just started playing with the {item}. {child1}, {child2} gets to finish their turn first. Let's set a timer for 5 minutes. Would you like to play with [similar toy] while you wait, or should we find something else fun?"`,
 					tips: [
-						'Protect the first child\'s right to play',
+						"Protect the first child's right to play",
 						'Give concrete wait time',
 						'Help waiting child find alternative',
 						'Praise patience when timer goes off'
@@ -86,7 +86,7 @@
 		turn: {
 			title: 'Not Taking Turns',
 			icon: '🔄',
-			color: '#3498db',
+			color: '#3b82f6',
 			steps: [
 				{
 					question: 'What are they taking turns with?',
@@ -125,7 +125,7 @@
 					title: 'Competing for Parent Attention',
 					script: `"I can see you both need me right now. {child1}, I'm going to help you first for 5 minutes, then {child2}, you'll have my full attention. {child2}, can you be patient for 5 minutes? You can [quiet activity] while you wait. Then it's your turn and {child1} will wait."`,
 					tips: [
-						'Acknowledge both children\'s needs',
+						"Acknowledge both children's needs",
 						'Give specific wait times',
 						'Follow through completely',
 						'Try to give each child some one-on-one time daily',
@@ -154,7 +154,7 @@
 					question: 'Did you see what happened?',
 					options: [
 						{ label: 'Yes, I saw who hit/pushed first', action: 'saw' },
-						{ label: 'No, I heard the conflict but didn\'t see', action: 'didnt-see' }
+						{ label: "No, I heard the conflict but didn't see", action: 'didnt-see' }
 					]
 				}
 			],
@@ -173,7 +173,7 @@
 					]
 				},
 				'didnt-see': {
-					title: 'You Didn\'t See Who Started It',
+					title: "You Didn't See Who Started It",
 					script: `"I can see someone got hurt and you're both upset. I didn't see what happened, so I can't say who was right or wrong. What I know is: hitting is not okay. Both of you need to use words. Let's take some deep breaths and calm down, then we'll talk about what to do differently next time."`,
 					tips: [
 						'Don\'t try to figure out who\'s "guilty"',
@@ -195,7 +195,7 @@
 					question: 'Is someone hurt or in danger?',
 					options: [
 						{ label: 'Yes, someone is hurt or unsafe', action: 'safety' },
-						{ label: 'No, they\'re trying to get sibling in trouble', action: 'tattling' }
+						{ label: "No, they're trying to get sibling in trouble", action: 'tattling' }
 					]
 				}
 			],
@@ -214,7 +214,7 @@
 					title: 'Tattling to Get Someone in Trouble',
 					script: `"It sounds like you're trying to get {sibling} in trouble. Is someone hurt? No? Then this is something you two can work out together. You can tell {sibling} how you feel, or you can choose to play somewhere else. I'll only step in if someone is being hurt or if someone asks for help politely."`,
 					tips: [
-						'Don\'t engage with petty tattling',
+						"Don't engage with petty tattling",
 						'Teach kids to solve minor conflicts themselves',
 						'Ask: "Is someone hurt? Is someone being unsafe?"',
 						'Redirect them to talk to each other',
@@ -299,7 +299,7 @@
 
 <div class="container">
 	<header>
-		<button class="back-button" onclick={() => goto('/')}>← Back</button>
+		<button class="back-button" onclick={() => goto('/')}>↩︎ Back</button>
 		<h1>Sibling Conflict Mediator</h1>
 		<div style="width: 100px;"></div>
 	</header>
@@ -404,6 +404,10 @@
 </div>
 
 <style>
+	:global(body) {
+		background: linear-gradient(135deg, #f0f9ff via #fdf2f8 to #fef3c7);
+	}
+
 	.container {
 		max-width: 900px;
 		margin: 0 auto;
@@ -420,44 +424,45 @@
 
 	header h1 {
 		font-size: 2rem;
-		color: #2c3e50;
+		color: #1f2937;
 		flex: 1;
 		text-align: center;
 	}
 
 	.back-button {
-		background: #3498db;
-		color: white;
-		border: none;
+		background: transparent;
+		color: #374151;
+		border: 1px solid #d1d5db;
 		padding: 0.75rem 1.5rem;
-		border-radius: 8px;
+		border-radius: 9999px;
 		cursor: pointer;
 		font-size: 1rem;
-		transition: background 0.3s;
+		transition: all 0.3s;
 	}
 
 	.back-button:hover {
-		background: #2980b9;
+		background: rgba(255, 255, 255, 0.8);
+		border-color: #9ca3af;
 	}
 
 	.intro {
 		text-align: center;
 		font-size: 1.2rem;
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 2rem;
 	}
 
 	.names-section {
-		background: white;
+		background: rgba(255, 255, 255, 0.8);
 		padding: 1.5rem;
-		border-radius: 12px;
+		border-radius: 1rem;
 		margin-bottom: 2rem;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 	}
 
 	.names-section h2 {
 		margin-top: 0;
-		color: #2c3e50;
+		color: #1f2937;
 		font-size: 1.3rem;
 	}
 
@@ -470,20 +475,20 @@
 		flex: 1;
 		padding: 0.75rem;
 		border: 2px solid #e0e0e0;
-		border-radius: 8px;
+		border-radius: 1rem;
 		font-size: 1rem;
 	}
 
 	.conflict-types {
-		background: white;
+		background: rgba(255, 255, 255, 0.8);
 		padding: 1.5rem;
-		border-radius: 12px;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		border-radius: 1rem;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 	}
 
 	.conflict-types h2 {
 		margin-top: 0;
-		color: #2c3e50;
+		color: #1f2937;
 	}
 
 	.types-grid {
@@ -493,9 +498,9 @@
 	}
 
 	.conflict-card {
-		background: white;
+		background: rgba(255, 255, 255, 0.8);
 		border: 3px solid;
-		border-radius: 12px;
+		border-radius: 1rem;
 		padding: 2rem;
 		cursor: pointer;
 		transition: all 0.3s;
@@ -504,7 +509,7 @@
 
 	.conflict-card:hover {
 		transform: translateY(-4px);
-		box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 	}
 
 	.conflict-icon {
@@ -514,7 +519,7 @@
 
 	.conflict-card h3 {
 		margin: 0;
-		color: #2c3e50;
+		color: #1f2937;
 		font-size: 1.1rem;
 	}
 
@@ -524,7 +529,7 @@
 		padding: 0.5rem 1rem;
 		border-radius: 6px;
 		cursor: pointer;
-		color: #2c3e50;
+		color: #1f2937;
 		font-size: 0.95rem;
 		transition: background 0.3s;
 		margin-bottom: 1.5rem;
@@ -540,7 +545,7 @@
 
 	.progress-text {
 		text-align: center;
-		color: #7f8c8d;
+		color: #6b7280;
 		margin-bottom: 0.5rem;
 		font-weight: 600;
 	}
@@ -555,20 +560,20 @@
 
 	.progress-bar {
 		height: 100%;
-		background: #3498db;
+		background: #3b82f6;
 		transition: width 0.3s ease;
 	}
 
 	.question-card {
-		background: white;
+		background: rgba(255, 255, 255, 0.8);
 		padding: 2rem;
-		border-radius: 12px;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		border-radius: 1rem;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 	}
 
 	.question-card h2 {
 		margin-top: 0;
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 2rem;
 		text-align: center;
 	}
@@ -580,13 +585,13 @@
 	}
 
 	.option-button {
-		background: white;
-		border: 2px solid #3498db;
+		background: rgba(255, 255, 255, 0.8);
+		border: 2px solid #3b82f6;
 		padding: 1.5rem;
-		border-radius: 8px;
+		border-radius: 1rem;
 		cursor: pointer;
 		font-size: 1.1rem;
-		color: #2c3e50;
+		color: #1f2937;
 		transition: all 0.3s;
 		text-align: left;
 	}
@@ -599,7 +604,7 @@
 	.resolution-header {
 		color: white;
 		padding: 2rem;
-		border-radius: 12px;
+		border-radius: 1rem;
 		text-align: center;
 		margin-bottom: 2rem;
 	}
@@ -616,22 +621,22 @@
 
 	.script-box {
 		background: #e8f4f8;
-		border-left: 4px solid #3498db;
+		border-left: 4px solid #3b82f6;
 		padding: 1.5rem;
-		border-radius: 8px;
+		border-radius: 1rem;
 		margin-bottom: 2rem;
 	}
 
 	.script-box h3 {
 		margin-top: 0;
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 1rem;
 	}
 
 	.script-text {
 		font-size: 1.05rem;
 		line-height: 1.8;
-		color: #2c3e50;
+		color: #1f2937;
 		font-style: italic;
 		margin-bottom: 1rem;
 		white-space: pre-line;
@@ -640,7 +645,7 @@
 	}
 
 	.copy-button {
-		background: #3498db;
+		background: #3b82f6;
 		color: white;
 		border: none;
 		padding: 0.5rem 1rem;
@@ -651,20 +656,20 @@
 	}
 
 	.copy-button:hover {
-		background: #2980b9;
+		background: #2563eb;
 	}
 
 	.tips-section {
 		background: #fff9e6;
 		border-left: 4px solid #f39c12;
 		padding: 1.5rem;
-		border-radius: 8px;
+		border-radius: 1rem;
 		margin-bottom: 2rem;
 	}
 
 	.tips-section h3 {
 		margin-top: 0;
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 1rem;
 	}
 
@@ -674,7 +679,7 @@
 	}
 
 	.tips-section li {
-		color: #2c3e50;
+		color: #1f2937;
 		line-height: 1.8;
 		margin-bottom: 0.5rem;
 	}
@@ -683,12 +688,12 @@
 		background: #e8f8f5;
 		border-left: 4px solid #27ae60;
 		padding: 1.5rem;
-		border-radius: 8px;
+		border-radius: 1rem;
 	}
 
 	.general-tips h3 {
 		margin-top: 0;
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 1rem;
 	}
 
@@ -698,7 +703,7 @@
 	}
 
 	.general-tips li {
-		color: #2c3e50;
+		color: #1f2937;
 		line-height: 1.8;
 		margin-bottom: 0.5rem;
 	}

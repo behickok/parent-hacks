@@ -9,7 +9,7 @@
 
 	const colors = [
 		{ name: 'red', hex: '#e74c3c', emoji: '🔴' },
-		{ name: 'blue', hex: '#3498db', emoji: '🔵' },
+		{ name: 'blue', hex: '#3b82f6', emoji: '🔵' },
 		{ name: 'green', hex: '#27ae60', emoji: '🟢' },
 		{ name: 'yellow', hex: '#f1c40f', emoji: '🟡' },
 		{ name: 'purple', hex: '#9b59b6', emoji: '🟣' },
@@ -65,7 +65,7 @@
 
 <div class="container">
 	<header>
-		<button class="back-button" onclick={() => goto('/')}>← Back</button>
+		<button class="back-button" onclick={() => goto('/')}>↩︎ Back</button>
 		<h1>Calming Activity</h1>
 		<div class="score">Streak: {correctCount}</div>
 	</header>
@@ -121,6 +121,10 @@
 </div>
 
 <style>
+	:global(body) {
+		background: linear-gradient(135deg, #f0f9ff via #fdf2f8 to #fef3c7);
+	}
+
 	.container {
 		max-width: 1000px;
 		margin: 0 auto;
@@ -137,38 +141,39 @@
 
 	header h1 {
 		font-size: 2rem;
-		color: #2c3e50;
+		color: #1f2937;
 		flex: 1;
 		text-align: center;
 	}
 
 	.back-button {
-		background: #3498db;
-		color: white;
-		border: none;
+		background: transparent;
+		color: #374151;
+		border: 1px solid #d1d5db;
 		padding: 0.75rem 1.5rem;
-		border-radius: 8px;
+		border-radius: 9999px;
 		cursor: pointer;
 		font-size: 1rem;
-		transition: background 0.3s;
+		transition: all 0.3s;
 	}
 
 	.back-button:hover {
-		background: #2980b9;
+		background: rgba(255, 255, 255, 0.8);
+		border-color: #9ca3af;
 	}
 
 	.score {
 		background: #27ae60;
 		color: white;
 		padding: 0.75rem 1.5rem;
-		border-radius: 8px;
+		border-radius: 1rem;
 		font-weight: 600;
 		font-size: 1rem;
 	}
 
 	.instructions {
 		text-align: center;
-		color: #7f8c8d;
+		color: #6b7280;
 		margin-bottom: 2rem;
 		font-size: 1.1rem;
 	}
@@ -178,10 +183,10 @@
 	}
 
 	.activity-container {
-		background: white;
-		border-radius: 12px;
+		background: rgba(255, 255, 255, 0.8);
+		border-radius: 1rem;
 		padding: 2rem;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 	}
 
 	.dots-area {
@@ -189,7 +194,7 @@
 		width: 100%;
 		height: 400px;
 		background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-		border-radius: 12px;
+		border-radius: 1rem;
 		margin-bottom: 2rem;
 		border: 2px solid #e0e0e0;
 	}
@@ -221,7 +226,7 @@
 
 	.question {
 		font-size: 1.8rem;
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 1.5rem;
 		font-weight: 600;
 		display: flex;
@@ -246,30 +251,30 @@
 		padding: 1rem;
 		font-size: 1.5rem;
 		border: 2px solid #e0e0e0;
-		border-radius: 8px;
+		border-radius: 1rem;
 		width: 150px;
 		text-align: center;
 	}
 
 	.answer-section input:focus {
 		outline: none;
-		border-color: #3498db;
+		border-color: #3b82f6;
 	}
 
 	.answer-section button {
 		padding: 1rem 2rem;
 		font-size: 1.2rem;
-		background: #3498db;
+		background: #3b82f6;
 		color: white;
 		border: none;
-		border-radius: 8px;
+		border-radius: 1rem;
 		cursor: pointer;
 		transition: all 0.3s;
 		font-weight: 600;
 	}
 
 	.answer-section button:hover:not(:disabled) {
-		background: #2980b9;
+		background: #2563eb;
 		transform: translateY(-2px);
 	}
 
@@ -281,7 +286,7 @@
 	.message {
 		margin-top: 1rem;
 		padding: 1rem;
-		border-radius: 8px;
+		border-radius: 1rem;
 		font-size: 1.2rem;
 		font-weight: 600;
 		background: #ffe6e6;
@@ -312,7 +317,7 @@
 		background: #95a5a6;
 		color: white;
 		border: none;
-		border-radius: 8px;
+		border-radius: 1rem;
 		cursor: pointer;
 		transition: all 0.3s;
 		display: block;
@@ -321,7 +326,7 @@
 	}
 
 	.new-button:hover {
-		background: #7f8c8d;
+		background: #6b7280;
 		transform: translateY(-2px);
 	}
 

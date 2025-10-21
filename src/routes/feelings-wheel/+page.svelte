@@ -21,11 +21,12 @@
 				'Dance to your favorite song',
 				'Give someone a hug'
 			],
-			parentTip: 'Acknowledge and celebrate happy feelings! Help your child notice what brings them joy and create opportunities for more positive experiences.'
+			parentTip:
+				'Acknowledge and celebrate happy feelings! Help your child notice what brings them joy and create opportunities for more positive experiences.'
 		},
 		sad: {
 			name: 'Sad',
-			color: '#3498db',
+			color: '#3b82f6',
 			emoji: '😢',
 			intensities: {
 				mild: ['Disappointed', 'Down', 'Blue', 'Gloomy'],
@@ -33,12 +34,13 @@
 				strong: ['Heartbroken', 'Devastated', 'Despairing', 'Grief-stricken']
 			},
 			activities: [
-				'Talk about what\'s making you sad',
-				'Have a gentle cry - it\'s okay!',
+				"Talk about what's making you sad",
+				"Have a gentle cry - it's okay!",
 				'Snuggle with a favorite stuffed animal',
 				'Look at happy photos or memories'
 			],
-			parentTip: 'Sadness is a valid emotion. Sit with your child, validate their feelings, and offer comfort. Avoid trying to "fix" it immediately - sometimes they just need to feel sad for a while.'
+			parentTip:
+				'Sadness is a valid emotion. Sit with your child, validate their feelings, and offer comfort. Avoid trying to "fix" it immediately - sometimes they just need to feel sad for a while.'
 		},
 		angry: {
 			name: 'Angry',
@@ -55,7 +57,8 @@
 				'Squeeze a stress ball or pillow',
 				'Draw angry scribbles on paper'
 			],
-			parentTip: 'Anger is okay, but we need safe ways to express it. Help your child identify what triggered the anger and teach them healthy outlets like movement or talking about it.'
+			parentTip:
+				'Anger is okay, but we need safe ways to express it. Help your child identify what triggered the anger and teach them healthy outlets like movement or talking about it.'
 		},
 		scared: {
 			name: 'Scared',
@@ -68,11 +71,12 @@
 			},
 			activities: [
 				'Talk about what feels scary',
-				'Hold someone\'s hand',
+				"Hold someone's hand",
 				'Breathe slowly with a trusted adult',
 				'Think of something that makes you feel brave'
 			],
-			parentTip: 'Never dismiss a child\'s fears, even if they seem irrational. Validate their feelings, offer comfort and reassurance, and help them feel safe.'
+			parentTip:
+				"Never dismiss a child's fears, even if they seem irrational. Validate their feelings, offer comfort and reassurance, and help them feel safe."
 		},
 		surprised: {
 			name: 'Surprised',
@@ -85,11 +89,12 @@
 			},
 			activities: [
 				'Talk about what surprised you',
-				'Draw what you didn\'t expect',
+				"Draw what you didn't expect",
 				'Tell the story to someone',
 				'Take a moment to process what happened'
 			],
-			parentTip: 'Surprise can be positive or negative. Help your child process unexpected events and talk through what they\'re feeling about the surprise.'
+			parentTip:
+				"Surprise can be positive or negative. Help your child process unexpected events and talk through what they're feeling about the surprise."
 		},
 		calm: {
 			name: 'Calm',
@@ -106,7 +111,8 @@
 				'Listen to calm music',
 				'Practice mindful breathing'
 			],
-			parentTip: 'Calm moments are wonderful opportunities to connect. Help your child notice and appreciate when they feel peaceful and regulated.'
+			parentTip:
+				'Calm moments are wonderful opportunities to connect. Help your child notice and appreciate when they feel peaceful and regulated.'
 		}
 	};
 
@@ -130,7 +136,7 @@
 
 <div class="container">
 	<header>
-		<button class="back-button" onclick={() => goto('/')}>← Back</button>
+		<button class="back-button" onclick={() => goto('/')}>↩︎ Back</button>
 		<h1>Feelings Wheel</h1>
 		<div style="width: 100px;"></div>
 	</header>
@@ -157,13 +163,13 @@
 			<h3>💡 For Parents:</h3>
 			<p>
 				All feelings are valid and important. Help your child build emotional vocabulary by naming
-				feelings together. The more words they have for emotions, the better they can understand
-				and express themselves.
+				feelings together. The more words they have for emotions, the better they can understand and
+				express themselves.
 			</p>
 		</div>
 	{:else if !showDetails}
 		<div class="intensity-section">
-			<button class="breadcrumb-button" onclick={reset}>← Back to all feelings</button>
+			<button class="breadcrumb-button" onclick={reset}>↩︎ Back to all feelings</button>
 
 			<div class="selected-emotion-header" style="background: {emotions[selectedEmotion].color};">
 				<div class="big-emoji">{emotions[selectedEmotion].emoji}</div>
@@ -206,7 +212,7 @@
 	{:else}
 		<div class="details-section">
 			<button class="breadcrumb-button" onclick={() => (showDetails = false)}>
-				← Back to intensity
+				↩︎ Back to intensity
 			</button>
 
 			<div class="feeling-summary" style="border-color: {emotions[selectedEmotion].color};">
@@ -214,11 +220,16 @@
 				<div class="summary-text">
 					<h2>I feel {emotions[selectedEmotion].name}</h2>
 					<p class="intensity-level">
-						{selectedIntensity === 'mild' ? 'A Little' : selectedIntensity === 'medium' ? 'Medium' : 'A Lot'}
+						{selectedIntensity === 'mild'
+							? 'A Little'
+							: selectedIntensity === 'medium'
+								? 'Medium'
+								: 'A Lot'}
 					</p>
 					<div class="chosen-words">
 						{#each emotions[selectedEmotion].intensities[selectedIntensity] as word}
-							<span class="word" style="background: {emotions[selectedEmotion].color};">{word}</span>
+							<span class="word" style="background: {emotions[selectedEmotion].color};">{word}</span
+							>
 						{/each}
 					</div>
 				</div>
@@ -246,6 +257,10 @@
 </div>
 
 <style>
+	:global(body) {
+		background: linear-gradient(135deg, #f0f9ff via #fdf2f8 to #fef3c7);
+	}
+
 	.container {
 		max-width: 1000px;
 		margin: 0 auto;
@@ -262,30 +277,31 @@
 
 	header h1 {
 		font-size: 2rem;
-		color: #2c3e50;
+		color: #1f2937;
 		flex: 1;
 		text-align: center;
 	}
 
 	.back-button {
-		background: #3498db;
-		color: white;
-		border: none;
+		background: transparent;
+		color: #374151;
+		border: 1px solid #d1d5db;
 		padding: 0.75rem 1.5rem;
-		border-radius: 8px;
+		border-radius: 9999px;
 		cursor: pointer;
 		font-size: 1rem;
-		transition: background 0.3s;
+		transition: all 0.3s;
 	}
 
 	.back-button:hover {
-		background: #2980b9;
+		background: rgba(255, 255, 255, 0.8);
+		border-color: #9ca3af;
 	}
 
 	.intro {
 		text-align: center;
 		font-size: 1.3rem;
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 2rem;
 		font-weight: 500;
 	}
@@ -298,13 +314,13 @@
 	}
 
 	.emotion-card {
-		background: white;
+		background: rgba(255, 255, 255, 0.8);
 		border: none;
 		border-radius: 16px;
 		padding: 2rem;
 		cursor: pointer;
 		transition: all 0.3s;
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 		color: white;
 		font-weight: 600;
 	}
@@ -326,18 +342,18 @@
 	.tip-box {
 		background: #e8f4f8;
 		padding: 1.5rem;
-		border-radius: 12px;
-		border-left: 4px solid #3498db;
+		border-radius: 1rem;
+		border-left: 4px solid #3b82f6;
 	}
 
 	.tip-box h3 {
 		margin-top: 0;
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 0.5rem;
 	}
 
 	.tip-box p {
-		color: #2c3e50;
+		color: #1f2937;
 		line-height: 1.6;
 		margin: 0;
 	}
@@ -348,7 +364,7 @@
 		padding: 0.5rem 1rem;
 		border-radius: 6px;
 		cursor: pointer;
-		color: #2c3e50;
+		color: #1f2937;
 		font-size: 0.95rem;
 		transition: background 0.3s;
 		margin-bottom: 1.5rem;
@@ -361,7 +377,7 @@
 	.selected-emotion-header {
 		text-align: center;
 		padding: 2rem;
-		border-radius: 12px;
+		border-radius: 1rem;
 		color: white;
 		margin-bottom: 2rem;
 	}
@@ -379,7 +395,7 @@
 	.intensity-prompt {
 		text-align: center;
 		font-size: 1.5rem;
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 2rem;
 		font-weight: 500;
 	}
@@ -391,9 +407,9 @@
 	}
 
 	.intensity-card {
-		background: white;
+		background: rgba(255, 255, 255, 0.8);
 		border: 2px solid #e0e0e0;
-		border-radius: 12px;
+		border-radius: 1rem;
 		padding: 2rem;
 		cursor: pointer;
 		transition: all 0.3s;
@@ -401,13 +417,13 @@
 	}
 
 	.intensity-card:hover {
-		border-color: #3498db;
+		border-color: #3b82f6;
 		transform: translateY(-4px);
-		box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 	}
 
 	.intensity-card h3 {
-		color: #2c3e50;
+		color: #1f2937;
 		margin-top: 0;
 		margin-bottom: 1rem;
 		font-size: 1.5rem;
@@ -422,7 +438,7 @@
 
 	.word-badge {
 		background: #ecf0f1;
-		color: #2c3e50;
+		color: #1f2937;
 		padding: 0.5rem 1rem;
 		border-radius: 20px;
 		font-size: 0.9rem;
@@ -430,9 +446,9 @@
 	}
 
 	.feeling-summary {
-		background: white;
+		background: rgba(255, 255, 255, 0.8);
 		border: 3px solid;
-		border-radius: 12px;
+		border-radius: 1rem;
 		padding: 2rem;
 		display: flex;
 		gap: 2rem;
@@ -446,11 +462,11 @@
 
 	.summary-text h2 {
 		margin: 0 0 0.5rem 0;
-		color: #2c3e50;
+		color: #1f2937;
 	}
 
 	.intensity-level {
-		color: #7f8c8d;
+		color: #6b7280;
 		font-size: 1.1rem;
 		margin-bottom: 1rem;
 		font-weight: 600;
@@ -473,14 +489,14 @@
 	.activities-box {
 		background: #fff9e6;
 		padding: 1.5rem;
-		border-radius: 12px;
+		border-radius: 1rem;
 		margin-bottom: 1.5rem;
 		border-left: 4px solid #f39c12;
 	}
 
 	.activities-box h3 {
 		margin-top: 0;
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 1rem;
 	}
 
@@ -490,7 +506,7 @@
 	}
 
 	.activities-box li {
-		color: #2c3e50;
+		color: #1f2937;
 		line-height: 1.8;
 		margin-bottom: 0.5rem;
 		font-size: 1.05rem;
@@ -499,19 +515,19 @@
 	.parent-tip-box {
 		background: #e8f4f8;
 		padding: 1.5rem;
-		border-radius: 12px;
+		border-radius: 1rem;
 		border-left: 4px solid;
 		margin-bottom: 1.5rem;
 	}
 
 	.parent-tip-box h3 {
 		margin-top: 0;
-		color: #2c3e50;
+		color: #1f2937;
 		margin-bottom: 0.5rem;
 	}
 
 	.parent-tip-box p {
-		color: #2c3e50;
+		color: #1f2937;
 		line-height: 1.6;
 		margin: 0;
 		word-wrap: break-word;
@@ -527,7 +543,7 @@
 		color: white;
 		border: none;
 		padding: 1rem 2rem;
-		border-radius: 8px;
+		border-radius: 1rem;
 		cursor: pointer;
 		font-size: 1.1rem;
 		transition: all 0.3s;
@@ -535,7 +551,7 @@
 	}
 
 	.reset-button:hover {
-		background: #7f8c8d;
+		background: #6b7280;
 		transform: translateY(-2px);
 	}
 

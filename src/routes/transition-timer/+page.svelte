@@ -9,6 +9,8 @@
 	let hasCompleted = $state(false);
 	let intervalId = null;
 	let selectedSong = $state('cleanup');
+	let audioElement = $state(null);
+	let musicEnabled = $state(true);
 
 	const transitions = {
 		cleanup: {
@@ -16,140 +18,35 @@
 			icon: '🧹',
 			color: '#e74c3c',
 			defaultDuration: 5,
-			songs: [
-				{
-					id: 'cleanup',
-					name: 'Clean Up Song',
-					lyrics: [
-						'Clean up, clean up',
-						'Everybody, everywhere',
-						'Clean up, clean up',
-						'Everybody do your share!'
-					]
-				},
-				{
-					id: 'cleanup2',
-					name: 'Tidy Up Time',
-					lyrics: [
-						'It\'s time to tidy up our space',
-						'Put the toys back in their place',
-						'Working together, we can do it',
-						'Clean up time, let\'s get to it!'
-					]
-				}
-			]
+			audioFile: '/songs/Clean-Up-Song.mp3'
 		},
 		getready: {
 			name: 'Get Ready Time',
 			icon: '👕',
 			color: '#3498db',
 			defaultDuration: 10,
-			songs: [
-				{
-					id: 'getready',
-					name: 'Getting Ready Song',
-					lyrics: [
-						'Time to get ready, here we go',
-						'Brush our teeth and put on clothes',
-						'Pack our bag and tie our shoes',
-						'We\'re getting ready, no time to lose!'
-					]
-				},
-				{
-					id: 'morning',
-					name: 'Morning Routine',
-					lyrics: [
-						'This is the way we start our day',
-						'Start our day, start our day',
-						'This is the way we start our day',
-						'So early in the morning!'
-					]
-				}
-			]
+			audioFile: '/songs/Getting-Ready-Song.mp3'
 		},
 		leaving: {
 			name: 'Time to Leave',
 			icon: '🚗',
 			color: '#f39c12',
 			defaultDuration: 5,
-			songs: [
-				{
-					id: 'leaving',
-					name: 'Time to Go',
-					lyrics: [
-						'It\'s time to go, it\'s time to go',
-						'Get your things and off we go',
-						'Say goodbye and out the door',
-						'Time to leave, we can\'t wait more!'
-					]
-				},
-				{
-					id: 'goodbye',
-					name: 'Goodbye Song',
-					lyrics: [
-						'Goodbye, goodbye',
-						'We\'ll see you soon',
-						'Goodbye, goodbye',
-						'We\'ll be back at noon! (or afternoon!)'
-					]
-				}
-			]
+			audioFile: '/songs/Time-to-Go.mp3'
 		},
 		bedtime: {
 			name: 'Bedtime Routine',
 			icon: '🌙',
 			color: '#9b59b6',
 			defaultDuration: 10,
-			songs: [
-				{
-					id: 'bedtime',
-					name: 'Bedtime Song',
-					lyrics: [
-						'Now it\'s time to go to sleep',
-						'Close your eyes and count the sheep',
-						'Tomorrow brings another day',
-						'For now, it\'s time to rest and play in dreams!'
-					]
-				},
-				{
-					id: 'lullaby',
-					name: 'Gentle Lullaby',
-					lyrics: [
-						'Time for bed, my sleepy head',
-						'Snuggle in and rest instead',
-						'Dream of things both big and small',
-						'Goodnight, sleep tight, I love you all!'
-					]
-				}
-			]
+			audioFile: '/songs/Time-to-Go-to-Sleep.mp3'
 		},
 		screen: {
 			name: 'Screen Time Ending',
 			icon: '📱',
 			color: '#27ae60',
 			defaultDuration: 5,
-			songs: [
-				{
-					id: 'screenend',
-					name: 'All Done Song',
-					lyrics: [
-						'All done with screen time now',
-						'Put the device away somehow',
-						'Time to play in other ways',
-						'Screen time ends, it\'s been a good day!'
-					]
-				},
-				{
-					id: 'turnoff',
-					name: 'Turn Off Time',
-					lyrics: [
-						'Turn it off, turn it off',
-						'Time is up for now',
-						'We can watch again another day',
-						'But for now we say hooray to play!'
-					]
-				}
-			]
+			audioFile: '/songs/All-Done-Song.mp3'
 		}
 	};
 
@@ -177,16 +74,26 @@
 		}
 		hasCompleted = false;
 		isRunning = true;
+		if (musicEnabled && audioElement) {
+			audioElement.play().catch(err => console.error('Audio play failed:', err));
+		}
 	}
 
 	function pauseTimer() {
 		isRunning = false;
+		if (audioElement) {
+			audioElement.pause();
+		}
 	}
 
 	function stopTimer() {
 		isRunning = false;
 		remainingSeconds = 0;
 		hasCompleted = false;
+		if (audioElement) {
+			audioElement.pause();
+			audioElement.currentTime = 0;
+		}
 	}
 
 	function resetTimer() {
@@ -212,12 +119,10 @@
 		stopTimer();
 		transitionType = type;
 		duration = transitions[type].defaultDuration;
-		selectedSong = transitions[type].songs[0].id;
 		hasCompleted = false;
-	}
-
-	function getCurrentSong() {
-		return transitions[transitionType].songs.find((s) => s.id === selectedSong);
+		if (audioElement) {
+			audioElement.load();
+		}
 	}
 
 	onDestroy(() => {
@@ -255,8 +160,9 @@
 
 	<div class="timer-settings">
 		<div class="setting">
-			<label>Duration: {duration} minutes</label>
+			<label for="duration-slider">Duration: {duration} minutes</label>
 			<input
+				id="duration-slider"
 				type="range"
 				min="1"
 				max="15"
@@ -267,21 +173,21 @@
 		</div>
 
 		<div class="setting">
-			<label>Choose Song:</label>
-			<div class="song-buttons">
-				{#each transitions[transitionType].songs as song}
-					<button
-						class="song-button"
-						class:active={selectedSong === song.id}
-						onclick={() => (selectedSong = song.id)}
-						disabled={isRunning}
-					>
-						{song.name}
-					</button>
-				{/each}
-			</div>
+			<label class="checkbox-label">
+				<input
+					type="checkbox"
+					bind:checked={musicEnabled}
+				/>
+				Play music with timer
+			</label>
 		</div>
 	</div>
+
+	<audio
+		bind:this={audioElement}
+		src={transitions[transitionType].audioFile}
+		loop
+	></audio>
 
 	<div class="timer-display" style="border-color: {getTimerColor()}">
 		<div class="timer-visual">
@@ -321,15 +227,6 @@
 				{:else}
 					{duration}:00
 				{/if}
-			</div>
-		</div>
-
-		<div class="song-display">
-			<h3>🎵 {getCurrentSong().name}</h3>
-			<div class="lyrics">
-				{#each getCurrentSong().lyrics as line}
-					<p>{line}</p>
-				{/each}
 			</div>
 		</div>
 
@@ -496,47 +393,26 @@
 		margin-bottom: 0.5rem;
 	}
 
+	.checkbox-label {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		cursor: pointer;
+		font-weight: 600;
+	}
+
+	.checkbox-label input[type='checkbox'] {
+		width: 20px;
+		height: 20px;
+		cursor: pointer;
+	}
+
 	input[type='range'] {
 		width: 100%;
 	}
 
 	input[type='range']:disabled {
 		opacity: 0.5;
-	}
-
-	.song-buttons {
-		display: flex;
-		gap: 1rem;
-		flex-wrap: wrap;
-	}
-
-	.song-button {
-		flex: 1;
-		min-width: 150px;
-		padding: 0.75rem 1rem;
-		border: 2px solid #e0e0e0;
-		background: white;
-		border-radius: 8px;
-		cursor: pointer;
-		transition: all 0.3s;
-		font-size: 0.95rem;
-		word-wrap: break-word;
-		overflow-wrap: break-word;
-	}
-
-	.song-button:hover:not(:disabled) {
-		border-color: #3498db;
-	}
-
-	.song-button.active {
-		border-color: #3498db;
-		background: #e3f2fd;
-		font-weight: 600;
-	}
-
-	.song-button:disabled {
-		opacity: 0.5;
-		cursor: not-allowed;
 	}
 
 	.timer-display {
@@ -567,33 +443,6 @@
 		font-size: 3rem;
 		font-weight: bold;
 		font-family: 'Courier New', monospace;
-	}
-
-	.song-display {
-		text-align: center;
-		margin-bottom: 2rem;
-		padding: 1.5rem;
-		background: #f8f9fa;
-		border-radius: 8px;
-	}
-
-	.song-display h3 {
-		margin-top: 0;
-		color: #2c3e50;
-		margin-bottom: 1rem;
-	}
-
-	.lyrics {
-		font-size: 1.1rem;
-		line-height: 1.8;
-		color: #2c3e50;
-		font-style: italic;
-		word-wrap: break-word;
-		overflow-wrap: break-word;
-	}
-
-	.lyrics p {
-		margin: 0.5rem 0;
 	}
 
 	.timer-controls {
@@ -701,14 +550,6 @@
 
 		.transitions-grid {
 			grid-template-columns: repeat(2, 1fr);
-		}
-
-		.song-buttons {
-			flex-direction: column;
-		}
-
-		.song-button {
-			min-width: 100%;
 		}
 
 		.timer-controls {

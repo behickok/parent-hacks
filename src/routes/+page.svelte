@@ -98,6 +98,12 @@
 				<h3>Resources</h3>
 				<p>Articles from experts</p>
 			</button>
+
+			<button class="tool-card" onclick={() => goto('/product-recommendations')}>
+				<div class="tool-icon">🛍️</div>
+				<h3>Product Recommendations</h3>
+				<p>Helpful products for parents</p>
+			</button>
 		</div>
 	</section>
 </div>

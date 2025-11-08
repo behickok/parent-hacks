@@ -102,12 +102,18 @@
 		hasCompleted = false;
 	}
 
-	function getTimerColor() {
-		const percentRemaining = remainingSeconds / (duration * 60);
-		if (percentRemaining > 0.5) return transitions[transitionType].color;
-		if (percentRemaining > 0.25) return '#f39c12';
-		return '#e74c3c';
-	}
+        function getTimerColor() {
+                const totalSeconds = duration * 60;
+
+                if (remainingSeconds <= 0) {
+                        return hasCompleted ? '#e74c3c' : '#27ae60';
+                }
+
+                const percentRemaining = remainingSeconds / totalSeconds;
+                if (percentRemaining > 0.5) return '#27ae60';
+                if (percentRemaining > 0.25) return '#f39c12';
+                return '#e74c3c';
+        }
 
 	function formatTime(seconds) {
 		const mins = Math.floor(seconds / 60);

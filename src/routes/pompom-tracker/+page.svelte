@@ -15,6 +15,9 @@
 	let initialCount = $state(10);
 	let targetCount = $state(20);
 	let theme = $state('pompoms');
+	let streak = $state(0);
+	let lastCountDate = $state(null);
+	let lastCountValue = $state(null);
 
 	const themes = {
 		pompoms: { emoji: '🎨', name: 'Pom Poms' },
@@ -113,7 +116,10 @@
 								currentCount,
 								initialCount,
 								targetCount,
-								theme
+								theme,
+								streak,
+								lastCountDate,
+								lastCountValue
 							};
 						}
 						return kid;
@@ -137,6 +143,9 @@
 				initialCount = kid.initialCount;
 				targetCount = kid.targetCount;
 				theme = kid.theme;
+				streak = kid.streak || 0;
+				lastCountDate = kid.lastCountDate || null;
+				lastCountValue = kid.lastCountValue || null;
 			}
 		});
 	}
@@ -205,6 +214,49 @@
 
 	function reset() {
 		currentCount = initialCount;
+		saveToLocalStorage();
+	}
+
+	function countDay() {
+		// Get today's date as a string (YYYY-MM-DD)
+		const today = new Date().toISOString().split('T')[0];
+
+		// Check if goal was met today
+		const goalMet = currentCount >= targetCount;
+
+		// Update streak logic
+		if (goalMet) {
+			// Goal met - extend streak
+			// Check if we had a previous count date
+			if (lastCountDate) {
+				// Calculate days between last count and today
+				const lastDate = new Date(lastCountDate);
+				const todayDate = new Date(today);
+				const daysDiff = Math.floor((todayDate - lastDate) / (1000 * 60 * 60 * 24));
+
+				// If we're counting consecutively (within reasonable gap), increment
+				// Otherwise, start fresh at 1
+				if (daysDiff <= 1) {
+					streak++;
+				} else {
+					streak = 1;
+				}
+			} else {
+				// First time counting - start streak at 1
+				streak = 1;
+			}
+		} else {
+			// Goal not met - reset streak to 0
+			streak = 0;
+		}
+
+		// Save today's count
+		lastCountDate = today;
+		lastCountValue = currentCount;
+
+		// Reset for next day
+		currentCount = initialCount;
+
 		saveToLocalStorage();
 	}
 
@@ -381,6 +433,12 @@
 			<span class="info-text">Reward good behavior! Add one each time your kid does something great.</span>
 		</div>
 
+		<div class="streak-display">
+			<span class="streak-emoji">🔥</span>
+			<span class="streak-number">{streak}</span>
+			<span class="streak-label">Day Streak!</span>
+		</div>
+
 		<div class="progress-bar">
 			<div class="progress-fill" style="width: {(currentCount / targetCount) * 100}%"></div>
 		</div>
@@ -398,11 +456,18 @@
 		</div>
 
 		<div class="controls">
-			<button class="remove-button" onclick={removePompom} disabled={currentCount === 0}>
-				Remove One
+			<button class="remove-button" onclick={removePompom} disabled={currentCount === 0} title="Remove One">
+				➖
 			</button>
-			<button class="reset-button" onclick={reset}>Reset</button>
-			<button class="add-button" onclick={addPompom}> Add One </button>
+			<button class="reset-button" onclick={reset} title="Reset">
+				↺
+			</button>
+			<button class="add-button" onclick={addPompom} title="Add One">
+				➕
+			</button>
+			<button class="count-button" onclick={countDay} title="Count & Reset for Tomorrow">
+				📊
+			</button>
 		</div>
 
 		{#if currentCount >= targetCount}
@@ -896,6 +961,33 @@
 		line-height: 1.4;
 	}
 
+	.streak-display {
+		background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+		border: 3px solid #f59e0b;
+		border-radius: 1rem;
+		padding: 1rem;
+		margin-bottom: 1.5rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.75rem;
+		font-weight: bold;
+	}
+
+	.streak-emoji {
+		font-size: 2rem;
+	}
+
+	.streak-number {
+		font-size: 2.5rem;
+		color: #f59e0b;
+	}
+
+	.streak-label {
+		font-size: 1.1rem;
+		color: #92400e;
+	}
+
 	.progress-bar {
 		width: 100%;
 		height: 20px;
@@ -1012,6 +1104,16 @@
 		transform: translateY(-2px);
 	}
 
+	.count-button {
+		background: #3b82f6;
+		color: white;
+	}
+
+	.count-button:hover {
+		background: #2563eb;
+		transform: translateY(-2px);
+	}
+
 	.controls button:disabled {
 		opacity: 0.5;
 		cursor: not-allowed;
@@ -1037,16 +1139,42 @@
 	}
 
 	@media (max-width: 600px) {
+		.jar {
+			min-height: 200px;
+			max-height: 200px;
+			overflow-y: auto;
+		}
+
 		.controls {
-			flex-direction: column;
+			flex-direction: row;
+			flex-wrap: wrap;
 		}
 
 		.controls button {
-			width: 100%;
+			flex: 1;
+			min-width: 60px;
+			padding: 0.75rem 0.5rem;
+			font-size: 1.5rem;
 		}
 
 		.item {
+			font-size: 1.5rem;
+		}
+
+		.streak-display {
+			padding: 0.75rem;
+		}
+
+		.streak-emoji {
+			font-size: 1.5rem;
+		}
+
+		.streak-number {
 			font-size: 2rem;
+		}
+
+		.streak-label {
+			font-size: 0.9rem;
 		}
 	}
 </style>

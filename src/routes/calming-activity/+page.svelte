@@ -104,8 +104,8 @@
 </script>
 
 <div class="container">
-	<header>
-		<button class="back-button" onclick={() => goto('/')}>↩︎ Back</button>
+        <header>
+                <button class="back-button" on:click={() => goto('/')}>↩︎ Back</button>
 		<h1>Calming Activity</h1>
 		<div class="score">Streak: {correctCount}</div>
 	</header>
@@ -139,7 +139,7 @@
 
 			<div class="answer-buttons">
 				{#each answerOptions as option}
-					<button class="answer-button" onclick={() => checkAnswer(option)} disabled={processing}>
+                                        <button class="answer-button" on:click={() => checkAnswer(option)} disabled={processing}>
 						{option}
 					</button>
 				{/each}
@@ -152,8 +152,8 @@
 			{/if}
 		</div>
 
-		<button class="new-button" onclick={generateDots}>New Pattern</button>
-	</div>
+                <button class="new-button" on:click={generateDots}>New Pattern</button>
+        </div>
 </div>
 
 <style>

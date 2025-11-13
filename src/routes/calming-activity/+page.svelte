@@ -7,6 +7,9 @@
 	let message = $state('');
 	let correctCount = $state(0);
 	let actualCount = $state(0);
+	let processing = $state(false);
+	let timeoutId = null;
+	let dotIdCounter = 0;
 
 	const colors = [
 		{ name: 'red', hex: '#e74c3c', emoji: '🔴' },
@@ -52,7 +55,7 @@
 		for (let i = 0; i < totalDots; i++) {
 			const randomColor = colors[Math.floor(Math.random() * colors.length)];
 			newDots.push({
-				id: i,
+				id: `${dotIdCounter++}`, // Unique ID across all generations
 				color: randomColor,
 				x: Math.random() * 90 + 5, // 5-95%
 				y: Math.random() * 90 + 5 // 5-95%
@@ -64,19 +67,34 @@
 		actualCount = newDots.filter((dot) => dot.color.name === targetColor.name).length;
 		answerOptions = generateAnswerOptions(actualCount);
 		message = '';
+		processing = false;
 	}
 
 	function checkAnswer(selectedAnswer) {
+		// Prevent multiple clicks
+		if (processing) return;
+
+		processing = true;
+
+		// Clear any existing timeout
+		if (timeoutId) {
+			clearTimeout(timeoutId);
+			timeoutId = null;
+		}
+
 		if (selectedAnswer === actualCount) {
 			message = 'Correct! Take a deep breath...';
 			correctCount++;
-			setTimeout(() => {
+			timeoutId = setTimeout(() => {
 				generateDots();
+				timeoutId = null;
 			}, 1500);
 		} else {
 			message = `Not quite. There are ${actualCount} ${targetColor.name} dots. Try again!`;
-			setTimeout(() => {
+			timeoutId = setTimeout(() => {
 				message = '';
+				processing = false;
+				timeoutId = null;
 			}, 2000);
 		}
 	}
@@ -121,7 +139,7 @@
 
 			<div class="answer-buttons">
 				{#each answerOptions as option}
-					<button class="answer-button" onclick={() => checkAnswer(option)}>
+					<button class="answer-button" onclick={() => checkAnswer(option)} disabled={processing}>
 						{option}
 					</button>
 				{/each}
@@ -289,6 +307,13 @@
 	.answer-button:active {
 		transform: translateY(0);
 		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+	}
+
+	.answer-button:disabled {
+		background: #95a5a6;
+		cursor: not-allowed;
+		transform: none;
+		opacity: 0.6;
 	}
 
 	.message {

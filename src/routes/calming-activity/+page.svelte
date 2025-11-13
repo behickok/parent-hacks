@@ -3,9 +3,10 @@
 
 	let dots = $state([]);
 	let targetColor = $state('');
-	let userAnswer = $state('');
+	let answerOptions = $state([]);
 	let message = $state('');
 	let correctCount = $state(0);
+	let actualCount = $state(0);
 
 	const colors = [
 		{ name: 'red', hex: '#e74c3c', emoji: '🔴' },
@@ -15,6 +16,34 @@
 		{ name: 'purple', hex: '#9b59b6', emoji: '🟣' },
 		{ name: 'orange', hex: '#e67e22', emoji: '🟠' }
 	];
+
+	function generateAnswerOptions(correctAnswer) {
+		const options = new Set([correctAnswer]);
+
+		// Add options around the correct answer
+		const offsets = [-2, -1, 1, 2];
+		for (const offset of offsets) {
+			const option = correctAnswer + offset;
+			if (option >= 0 && options.size < 5) {
+				options.add(option);
+			}
+		}
+
+		// If we still need more options (e.g., correct answer is very low)
+		while (options.size < 5) {
+			const random = Math.max(0, correctAnswer + Math.floor(Math.random() * 5) - 2);
+			options.add(random);
+		}
+
+		// Convert to array and shuffle
+		const optionsArray = Array.from(options);
+		for (let i = optionsArray.length - 1; i > 0; i--) {
+			const j = Math.floor(Math.random() * (i + 1));
+			[optionsArray[i], optionsArray[j]] = [optionsArray[j], optionsArray[i]];
+		}
+
+		return optionsArray;
+	}
 
 	function generateDots() {
 		const totalDots = Math.floor(Math.random() * 25) + 15; // 15-40 dots
@@ -32,14 +61,13 @@
 
 		dots = newDots;
 		targetColor = colors[Math.floor(Math.random() * colors.length)];
-		userAnswer = '';
+		actualCount = newDots.filter((dot) => dot.color.name === targetColor.name).length;
+		answerOptions = generateAnswerOptions(actualCount);
 		message = '';
 	}
 
-	function checkAnswer() {
-		const actualCount = dots.filter((dot) => dot.color.name === targetColor.name).length;
-
-		if (parseInt(userAnswer) === actualCount) {
+	function checkAnswer(selectedAnswer) {
+		if (selectedAnswer === actualCount) {
 			message = 'Correct! Take a deep breath...';
 			correctCount++;
 			setTimeout(() => {
@@ -50,12 +78,6 @@
 			setTimeout(() => {
 				message = '';
 			}, 2000);
-		}
-	}
-
-	function handleKeyPress(event) {
-		if (event.key === 'Enter') {
-			checkAnswer();
 		}
 	}
 
@@ -97,16 +119,12 @@
 				<span>How many {targetColor.name} dots?</span>
 			</div>
 
-			<div class="answer-section">
-				<input
-					type="number"
-					bind:value={userAnswer}
-					onkeypress={handleKeyPress}
-					placeholder="Enter number"
-					min="0"
-					autofocus
-				/>
-				<button onclick={checkAnswer} disabled={!userAnswer}>Check</button>
+			<div class="answer-buttons">
+				{#each answerOptions as option}
+					<button class="answer-button" onclick={() => checkAnswer(option)}>
+						{option}
+					</button>
+				{/each}
 			</div>
 
 			{#if message}
@@ -239,31 +257,18 @@
 		font-size: 2.5rem;
 	}
 
-	.answer-section {
+	.answer-buttons {
 		display: flex;
 		gap: 1rem;
 		justify-content: center;
 		align-items: center;
 		margin-bottom: 1rem;
+		flex-wrap: wrap;
 	}
 
-	.answer-section input {
-		padding: 1rem;
+	.answer-button {
+		padding: 1.25rem 2rem;
 		font-size: 1.5rem;
-		border: 2px solid #e0e0e0;
-		border-radius: 1rem;
-		width: 150px;
-		text-align: center;
-	}
-
-	.answer-section input:focus {
-		outline: none;
-		border-color: #3b82f6;
-	}
-
-	.answer-section button {
-		padding: 1rem 2rem;
-		font-size: 1.2rem;
 		background: #3b82f6;
 		color: white;
 		border: none;
@@ -271,16 +276,19 @@
 		cursor: pointer;
 		transition: all 0.3s;
 		font-weight: 600;
+		min-width: 80px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 	}
 
-	.answer-section button:hover:not(:disabled) {
+	.answer-button:hover {
 		background: #2563eb;
 		transform: translateY(-2px);
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 	}
 
-	.answer-section button:disabled {
-		background: #95a5a6;
-		cursor: not-allowed;
+	.answer-button:active {
+		transform: translateY(0);
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 	}
 
 	.message {
@@ -335,13 +343,14 @@
 			height: 300px;
 		}
 
-		.answer-section {
-			flex-direction: column;
+		.answer-buttons {
+			gap: 0.75rem;
 		}
 
-		.answer-section input,
-		.answer-section button {
-			width: 100%;
+		.answer-button {
+			padding: 1rem 1.5rem;
+			font-size: 1.3rem;
+			min-width: 70px;
 		}
 
 		.question {

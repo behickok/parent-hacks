@@ -15,9 +15,10 @@
 	let initialCount = $state(10);
 	let targetCount = $state(20);
 	let theme = $state('pompoms');
-	let streak = $state(0);
-	let lastCountDate = $state(null);
-	let lastCountValue = $state(null);
+        let streak = $state(0);
+        let lastCountDate = $state(null);
+        let lastCountValue = $state(null);
+        let personalBest = $state(0);
 
 	const themes = {
 		pompoms: { emoji: '🎨', name: 'Pom Poms' },
@@ -61,32 +62,55 @@
 
 				// Migration: Add color to existing kids if missing
 				let needsSave = false;
-				kids = kids.map((kid, index) => {
-					if (!kid.color) {
-						needsSave = true;
-						return { ...kid, color: colorOptions[index % colorOptions.length] };
-					}
-					return kid;
-				});
-				if (needsSave) {
-					saveToLocalStorage();
-				}
-			} else {
+                                kids = kids.map((kid, index) => {
+                                        let updatedKid = kid;
+
+                                        if (!kid.color) {
+                                                needsSave = true;
+                                                updatedKid = {
+                                                        ...updatedKid,
+                                                        color: colorOptions[index % colorOptions.length]
+                                                };
+                                        }
+
+                                        if (kid.personalBest === undefined) {
+                                                needsSave = true;
+                                                updatedKid = {
+                                                        ...updatedKid,
+                                                        personalBest: Math.max(
+                                                                kid.currentCount ?? 0,
+                                                                kid.lastCountValue ?? 0,
+                                                                kid.initialCount ?? 0
+                                                        )
+                                                };
+                                        }
+
+                                        return updatedKid;
+                                });
+                                if (needsSave) {
+                                        saveToLocalStorage();
+                                }
+                        } else {
 				// Migration: Check for old single-kid data
 				const oldSaved = localStorage.getItem('pompomTracker');
 				if (oldSaved) {
 					const oldData = JSON.parse(oldSaved);
 					// Create a default kid with old data
-					const migrationKid = {
-						id: crypto.randomUUID(),
-						name: 'My Kid',
-						color: '#3b82f6',
-						currentCount: oldData.currentCount ?? 0,
-						initialCount: oldData.initialCount ?? 10,
-						targetCount: oldData.targetCount ?? 20,
-						theme: oldData.theme ?? 'pompoms',
-						createdAt: Date.now()
-					};
+                                        const migrationKid = {
+                                                id: crypto.randomUUID(),
+                                                name: 'My Kid',
+                                                color: '#3b82f6',
+                                                currentCount: oldData.currentCount ?? 0,
+                                                initialCount: oldData.initialCount ?? 10,
+                                                targetCount: oldData.targetCount ?? 20,
+                                                theme: oldData.theme ?? 'pompoms',
+                                                createdAt: Date.now(),
+                                                personalBest: Math.max(
+                                                        oldData.currentCount ?? 0,
+                                                        oldData.lastCountValue ?? 0,
+                                                        oldData.initialCount ?? 0
+                                                )
+                                        };
 					kids = [migrationKid];
 					activeKidId = migrationKid.id;
 					saveToLocalStorage();
@@ -109,21 +133,22 @@
 				const kidIndex = kids.findIndex((k) => k.id === activeKidId);
 				if (kidIndex !== -1) {
 					// Create a new array with the updated kid to ensure reactivity
-					kids = kids.map((kid, index) => {
-						if (index === kidIndex) {
-							return {
-								...kid,
-								currentCount,
-								initialCount,
-								targetCount,
-								theme,
-								streak,
-								lastCountDate,
-								lastCountValue
-							};
-						}
-						return kid;
-					});
+                                        kids = kids.map((kid, index) => {
+                                                if (index === kidIndex) {
+                                                        return {
+                                                                ...kid,
+                                                                currentCount,
+                                                                initialCount,
+                                                                targetCount,
+                                                                theme,
+                                                                streak,
+                                                                lastCountDate,
+                                                                lastCountValue,
+                                                                personalBest
+                                                        };
+                                                }
+                                                return kid;
+                                        });
 				}
 			}
 
@@ -138,32 +163,40 @@
 		// Use untrack to prevent this from creating dependencies on kids array
 		untrack(() => {
 			const kid = kids.find((k) => k.id === kidId);
-			if (kid) {
-				currentCount = kid.currentCount;
-				initialCount = kid.initialCount;
-				targetCount = kid.targetCount;
-				theme = kid.theme;
-				streak = kid.streak || 0;
-				lastCountDate = kid.lastCountDate || null;
-				lastCountValue = kid.lastCountValue || null;
-			}
-		});
-	}
+                        if (kid) {
+                                currentCount = kid.currentCount;
+                                initialCount = kid.initialCount;
+                                targetCount = kid.targetCount;
+                                theme = kid.theme;
+                                streak = kid.streak || 0;
+                                lastCountDate = kid.lastCountDate || null;
+                                lastCountValue = kid.lastCountValue || null;
+                                personalBest =
+                                        kid.personalBest ??
+                                        Math.max(
+                                                kid.currentCount ?? 0,
+                                                kid.lastCountValue ?? 0,
+                                                kid.initialCount ?? 0
+                                        );
+                        }
+                });
+        }
 
-	function createKid() {
-		if (!newKidName.trim()) return;
+        function createKid() {
+                if (!newKidName.trim()) return;
 
-		const defaultInitialCount = 10;
-		const newKid = {
-			id: crypto.randomUUID(),
-			name: newKidName.trim(),
-			color: newKidColor,
-			currentCount: defaultInitialCount,
-			initialCount: defaultInitialCount,
-			targetCount: 20,
-			theme: newKidTheme,
-			createdAt: Date.now()
-		};
+                const defaultInitialCount = 10;
+                const newKid = {
+                        id: crypto.randomUUID(),
+                        name: newKidName.trim(),
+                        color: newKidColor,
+                        currentCount: defaultInitialCount,
+                        initialCount: defaultInitialCount,
+                        targetCount: 20,
+                        theme: newKidTheme,
+                        createdAt: Date.now(),
+                        personalBest: defaultInitialCount
+                };
 
 		kids = [...kids, newKid];
 		activeKidId = newKid.id;
@@ -190,20 +223,23 @@
 			return;
 		}
 
-		kids = kids.filter((k) => k.id !== kidId);
+                kids = kids.filter((k) => k.id !== kidId);
 
-		// If we deleted the active kid, switch to the first remaining kid
-		if (activeKidId === kidId) {
-			activeKidId = kids[0]?.id || null;
+                // If we deleted the active kid, switch to the first remaining kid
+                if (activeKidId === kidId) {
+                        activeKidId = kids[0]?.id || null;
 		}
 
 		saveToLocalStorage();
 	}
 
-	function addPompom() {
-		currentCount++;
-		saveToLocalStorage();
-	}
+        function addPompom() {
+                currentCount++;
+                if (currentCount > personalBest) {
+                        personalBest = currentCount;
+                }
+                saveToLocalStorage();
+        }
 
 	function removePompom() {
 		if (currentCount > 0) {
@@ -212,13 +248,16 @@
 		}
 	}
 
-	function reset() {
-		currentCount = initialCount;
-		saveToLocalStorage();
-	}
+        function reset() {
+                currentCount = initialCount;
+                if (currentCount > personalBest) {
+                        personalBest = currentCount;
+                }
+                saveToLocalStorage();
+        }
 
-	function countDay() {
-		// Get today's date as a string (YYYY-MM-DD)
+        function countDay() {
+                // Get today's date as a string (YYYY-MM-DD)
 		const today = new Date().toISOString().split('T')[0];
 
 		// Check if goal was met today
@@ -250,26 +289,33 @@
 			streak = 0;
 		}
 
-		// Save today's count
-		lastCountDate = today;
-		lastCountValue = currentCount;
+                // Save today's count
+                lastCountDate = today;
+                lastCountValue = currentCount;
 
-		// Reset for next day
-		currentCount = initialCount;
+                if (currentCount > personalBest) {
+                        personalBest = currentCount;
+                }
 
-		saveToLocalStorage();
-	}
+                // Reset for next day
+                currentCount = initialCount;
 
-	function saveSettings() {
-		if (currentCount > targetCount) {
-			currentCount = targetCount;
-		}
-		if (currentCount < 0) {
-			currentCount = 0;
-		}
-		saveToLocalStorage();
-		showSettings = false;
-	}
+                saveToLocalStorage();
+        }
+
+        function saveSettings() {
+                if (currentCount > targetCount) {
+                        currentCount = targetCount;
+                }
+                if (currentCount < 0) {
+                        currentCount = 0;
+                }
+                if (currentCount > personalBest) {
+                        personalBest = currentCount;
+                }
+                saveToLocalStorage();
+                showSettings = false;
+        }
 </script>
 
 <div class="container">
@@ -433,15 +479,24 @@
 			<span class="info-text">Reward good behavior! Add one each time your kid does something great.</span>
 		</div>
 
-		<div class="streak-display">
-			<span class="streak-emoji">🔥</span>
-			<span class="streak-number">{streak}</span>
-			<span class="streak-label">Day Streak!</span>
-		</div>
+                <div class="stats-grid">
+                        <div class="streak-display">
+                                <span class="streak-emoji">🔥</span>
+                                <span class="streak-number">{streak}</span>
+                                <span class="streak-label">Day Streak!</span>
+                        </div>
+                        <div class="personal-best-display">
+                                <span class="personal-best-icon">🏆</span>
+                                <div class="personal-best-text">
+                                        <span class="personal-best-label">Personal Best</span>
+                                        <span class="personal-best-value">{personalBest}</span>
+                                </div>
+                        </div>
+                </div>
 
-		<div class="progress-bar">
-			<div class="progress-fill" style="width: {(currentCount / targetCount) * 100}%"></div>
-		</div>
+                <div class="progress-bar">
+                        <div class="progress-fill" style="width: {(currentCount / targetCount) * 100}%"></div>
+                </div>
 
 		<div class="counter">
 			<span class="current">{currentCount}</span>
@@ -961,18 +1016,25 @@
 		line-height: 1.4;
 	}
 
-	.streak-display {
-		background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-		border: 3px solid #f59e0b;
-		border-radius: 1rem;
-		padding: 1rem;
-		margin-bottom: 1.5rem;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 0.75rem;
-		font-weight: bold;
-	}
+        .stats-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 1rem;
+                margin-bottom: 1.5rem;
+        }
+
+        .streak-display {
+                background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+                border: 3px solid #f59e0b;
+                border-radius: 1rem;
+                padding: 1rem;
+                margin-bottom: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.75rem;
+                font-weight: bold;
+        }
 
 	.streak-emoji {
 		font-size: 2rem;
@@ -983,10 +1045,42 @@
 		color: #f59e0b;
 	}
 
-	.streak-label {
-		font-size: 1.1rem;
-		color: #92400e;
-	}
+        .streak-label {
+                font-size: 1.1rem;
+                color: #92400e;
+        }
+
+        .personal-best-display {
+                background: linear-gradient(135deg, #e0f2fe 0%, #bfdbfe 100%);
+                border: 3px solid #3b82f6;
+                border-radius: 1rem;
+                padding: 1rem;
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                font-weight: bold;
+                color: #1d4ed8;
+        }
+
+        .personal-best-icon {
+                font-size: 2rem;
+        }
+
+        .personal-best-text {
+                display: flex;
+                flex-direction: column;
+                line-height: 1.2;
+        }
+
+        .personal-best-label {
+                font-size: 1rem;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+        }
+
+        .personal-best-value {
+                font-size: 2rem;
+        }
 
 	.progress-bar {
 		width: 100%;
@@ -1138,12 +1232,16 @@
 		}
 	}
 
-	@media (max-width: 600px) {
-		.jar {
-			min-height: 200px;
-			max-height: 200px;
-			overflow-y: auto;
-		}
+        @media (max-width: 600px) {
+                .stats-grid {
+                        grid-template-columns: 1fr;
+                }
+
+                .jar {
+                        min-height: 200px;
+                        max-height: 200px;
+                        overflow-y: auto;
+                }
 
 		.controls {
 			flex-direction: row;
@@ -1161,20 +1259,32 @@
 			font-size: 1.5rem;
 		}
 
-		.streak-display {
-			padding: 0.75rem;
-		}
+                .streak-display {
+                        padding: 0.75rem;
+                }
 
-		.streak-emoji {
-			font-size: 1.5rem;
-		}
+                .streak-emoji {
+                        font-size: 1.5rem;
+                }
 
-		.streak-number {
-			font-size: 2rem;
-		}
+                .streak-number {
+                        font-size: 2rem;
+                }
 
-		.streak-label {
-			font-size: 0.9rem;
-		}
-	}
+                .streak-label {
+                        font-size: 0.9rem;
+                }
+
+                .personal-best-display {
+                        padding: 0.75rem;
+                }
+
+                .personal-best-icon {
+                        font-size: 1.5rem;
+                }
+
+                .personal-best-value {
+                        font-size: 1.75rem;
+                }
+        }
 </style>

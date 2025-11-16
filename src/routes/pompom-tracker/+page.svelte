@@ -449,6 +449,23 @@
 				</label>
 			</div>
 
+			<div class="setting override-section">
+				<h3>Manual Overrides</h3>
+				<p class="override-hint">Use these to restore values if they get accidentally reset</p>
+
+				<label>
+					Streak (Days):
+					<input type="number" bind:value={streak} min="0" max="1000" />
+				</label>
+			</div>
+
+			<div class="setting">
+				<label>
+					Personal Best:
+					<input type="number" bind:value={personalBest} min="0" max="1000" />
+				</label>
+			</div>
+
 			<div class="setting">
 				<label>Theme:</label>
 				<div class="theme-grid">
@@ -896,6 +913,27 @@
 
 	.setting {
 		margin-bottom: 1.5rem;
+	}
+
+	.override-section {
+		background: linear-gradient(135deg, #fef3c7 0%, #fde68a 50%, #fef3c7 100%);
+		border: 2px solid #f59e0b;
+		border-radius: 1rem;
+		padding: 1.5rem;
+		margin: 1.5rem 0;
+	}
+
+	.override-section h3 {
+		margin: 0 0 0.5rem 0;
+		color: #92400e;
+		font-size: 1.1rem;
+	}
+
+	.override-hint {
+		color: #92400e;
+		font-size: 0.85rem;
+		margin: 0 0 1rem 0;
+		font-style: italic;
 	}
 
 	.setting label {
